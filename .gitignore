@@ -1,0 +1,29 @@
+# Environment / secrets
+.env
+*.env
+api_keys*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Data files (not redistributed)
+data/
+results/
+*.parquet
+*.pkl
+*.h5
+
+# Figures
+figures/
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store
+.ipynb_checkpoints/
