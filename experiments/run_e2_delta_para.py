@@ -31,7 +31,7 @@ import pandas as pd
 from scipy.stats import rankdata, spearmanr
 
 sys.path.insert(0, os.path.dirname(__file__))
-import run_llm_e1 as e1  # reuse load_dataset / DATASETS / load_keys
+import run_e1 as e1  # reuse load_dataset / DATASETS / load_keys
 
 BASE = e1.BASE
 OUT = f"{BASE}/results/llm_e2"

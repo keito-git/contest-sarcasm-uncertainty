@@ -16,7 +16,7 @@ Human disagreement is MEAN-INDEPENDENT (Asai gate, learned from pilot confound):
   - CSC       : rel_var = Var / ((mean-1)(6-mean))   [1..6 rating scale]
   - MultiPICo : normalized entropy of p_ironic (already in `disagreement` col)
 
-Keys are read from a .env file in the script directory into os.environ WITHOUT printing values.
+Keys are read from a .env file in the repository root into os.environ WITHOUT printing values.
 CPU only for data; the only network calls are the two chat APIs.
 """
 from __future__ import annotations
@@ -62,7 +62,7 @@ DATASETS = {
 
 # ----------------------------------------------------------------------------- keys
 def load_keys() -> None:
-    envf = os.path.join(os.path.dirname(__file__), ".env")
+    envf = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
     for line in open(envf):
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:

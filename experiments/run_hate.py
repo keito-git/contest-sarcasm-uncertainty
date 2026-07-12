@@ -28,7 +28,7 @@ E2 (single-signal failure):
   Spearman rho(U_verbal, dis_mi) — expected weak (< 0.30) if
   LLM confidence fails to track human ambiguity.
 
-Keys: read from .env file in script directory (values never printed externally).
+Keys: read from .env file in the repository root (values never printed externally).
 Output: results/llm_hate/
 """
 from __future__ import annotations
@@ -89,7 +89,7 @@ MODEL_CONFIGS: list[dict] = [
 
 def load_keys() -> None:
     """Read .env file into os.environ (values never printed)."""
-    envf = os.path.join(os.path.dirname(__file__), ".env")
+    envf = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
     with open(envf) as f:
         for line in f:
             line = line.strip()

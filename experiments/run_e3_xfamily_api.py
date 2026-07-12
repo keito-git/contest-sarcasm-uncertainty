@@ -168,7 +168,7 @@ def call_api(client, model_id: str, messages: list[dict], retries: int = 4) -> s
 
 # -- Keys -------------------------------------------------------------------- #
 def load_keys() -> None:
-    envf = os.path.join(os.path.dirname(__file__), ".env")
+    envf = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
     for line in open(envf):
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
