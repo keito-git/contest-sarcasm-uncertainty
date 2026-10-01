@@ -1,0 +1,33 @@
+{
+  "script": "kbs/gpu_sweep/run_gpu_sweep_regen.py",
+  "mode": "c8",
+  "tag": "ll1b",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "cap_B": 1.7,
+  "K": 10,
+  "temperature": 1.0,
+  "batch_size": 16,
+  "utc_start": "2026-09-25T11:25:57.260149+00:00",
+  "hostname": "<redacted>",
+  "git_commit": "unknown",
+  "seed": 42,
+  "corpora": [
+    "CSC",
+    "EPIC",
+    "MultiPICo_es",
+    "MultiPICo_de",
+    "MultiPICo_fr",
+    "MultiPICo_it"
+  ],
+  "CUDA_VISIBLE_DEVICES": "0",
+  "dry_run": false,
+  "nvidia_smi_before": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 2 MiB, 97247 MiB, 0 %",
+  "CSC_n": 7036,
+  "EPIC_n": 2999,
+  "MultiPICo_es_n": 4681,
+  "MultiPICo_de_n": 2370,
+  "MultiPICo_fr_n": 1760,
+  "MultiPICo_it_n": 998,
+  "nvidia_smi_after": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 912 MiB, 96337 MiB, 100 %",
+  "utc_end": "2026-09-25T12:02:03.403593+00:00"
+}

@@ -1,0 +1,99 @@
+{
+  "source_used": "estimated_from_dis_mi",
+  "ki_per_language": {
+    "MultiPICo_es": {
+      "min": 2,
+      "median": 2.0,
+      "mean": 2.2709,
+      "max": 5,
+      "std": 0.4595,
+      "n_items": 4681,
+      "frac_k_ge4": 0.0056,
+      "frac_k_ge5": 0.0006,
+      "value_counts": {
+        "2": 3442,
+        "3": 1213,
+        "4": 23,
+        "5": 3
+      },
+      "delta_method_dis_se": {
+        "mean_dis": 0.568511,
+        "std_dis": 0.409124,
+        "se_dis": 0.00598,
+        "n": 4681
+      },
+      "source": "estimated_from_dis_mi",
+      "note": "k_i estimated via MLE from normalized binary entropy formula"
+    },
+    "MultiPICo_de": {
+      "min": 2,
+      "median": 2.0,
+      "mean": 2.2599,
+      "max": 8,
+      "std": 0.5106,
+      "n_items": 2370,
+      "frac_k_ge4": 0.0186,
+      "frac_k_ge5": 0.0046,
+      "value_counts": {
+        "2": 1813,
+        "3": 513,
+        "4": 33,
+        "5": 9,
+        "6": 1,
+        "8": 1
+      },
+      "delta_method_dis_se": {
+        "mean_dis": 0.501651,
+        "std_dis": 0.420364,
+        "se_dis": 0.008635,
+        "n": 2370
+      },
+      "source": "estimated_from_dis_mi",
+      "note": "k_i estimated via MLE from normalized binary entropy formula"
+    },
+    "MultiPICo_fr": {
+      "min": 2,
+      "median": 2.0,
+      "mean": 2.2881,
+      "max": 3,
+      "std": 0.4529,
+      "n_items": 1760,
+      "frac_k_ge4": 0.0,
+      "frac_k_ge5": 0.0,
+      "value_counts": {
+        "2": 1253,
+        "3": 507
+      },
+      "delta_method_dis_se": {
+        "mean_dis": 0.48674,
+        "std_dis": 0.423204,
+        "se_dis": 0.010088,
+        "n": 1760
+      },
+      "source": "estimated_from_dis_mi",
+      "note": "k_i estimated via MLE from normalized binary entropy formula"
+    },
+    "MultiPICo_it": {
+      "min": 2,
+      "median": 2.0,
+      "mean": 2.2355,
+      "max": 3,
+      "std": 0.4243,
+      "n_items": 998,
+      "frac_k_ge4": 0.0,
+      "frac_k_ge5": 0.0,
+      "value_counts": {
+        "2": 763,
+        "3": 235
+      },
+      "delta_method_dis_se": {
+        "mean_dis": 0.454043,
+        "std_dis": 0.427053,
+        "se_dis": 0.013518,
+        "n": 998
+      },
+      "source": "estimated_from_dis_mi",
+      "note": "k_i estimated via MLE from normalized binary entropy formula"
+    }
+  }
+}

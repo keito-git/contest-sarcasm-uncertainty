@@ -1,0 +1,95 @@
+{
+  "env": {
+    "utc": "2026-07-06T06:46:48.687273+00:00",
+    "phase": "epic1",
+    "n_per_dataset": 400,
+    "gpt_model": "gpt-4o-mini",
+    "claude_model": "anthropic/claude-haiku-4.5",
+    "seed": 42,
+    "cost": {
+      "gpt": {
+        "in_tok": 62108,
+        "out_tok": 1200,
+        "usd": 0.01
+      },
+      "claude": {
+        "in_tok": 67453,
+        "out_tok": 2400,
+        "usd": 0.0795
+      }
+    },
+    "total_usd": 0.0895
+  },
+  "results": [
+    {
+      "dataset": "EPIC",
+      "provider": "gpt",
+      "n_ok": 400,
+      "acc": 0.725,
+      "err_rate": 0.275,
+      "base_rate_pos": 0.2875,
+      "rho_Uverbal_dis": {
+        "rho": 0.2262265839012993,
+        "ci": [
+          0.13633973837120844,
+          0.31941583084213315
+        ],
+        "n": 400
+      },
+      "ece_verbal": 0.131125,
+      "brier_verbal": 0.21113125,
+      "rho_Ulogprob_dis": {
+        "rho": 0.16498588556187638,
+        "ci": [
+          0.07353169924744973,
+          0.2587985342349695
+        ],
+        "n": 400
+      },
+      "ece_logprob": 0.22467424516857154,
+      "brier_logprob": 0.2442956395440926,
+      "low_dis_err": 0.13846153846153847,
+      "low_dis_Uverbal": 0.12807692307692306,
+      "low_dis_n": 130,
+      "mid_dis_err": 0.2740740740740741,
+      "mid_dis_Uverbal": 0.1474074074074074,
+      "mid_dis_n": 135,
+      "high_dis_err": 0.4074074074074074,
+      "high_dis_Uverbal": 0.15555555555555556,
+      "high_dis_n": 135,
+      "epistemic_cluster_frac": 0.03,
+      "epistemic_cluster_n": 12,
+      "epistemic_cluster_err": 0.5
+    },
+    {
+      "dataset": "EPIC",
+      "provider": "claude",
+      "n_ok": 400,
+      "acc": 0.7675,
+      "err_rate": 0.2325,
+      "base_rate_pos": 0.2875,
+      "rho_Uverbal_dis": {
+        "rho": 0.2261288179180731,
+        "ci": [
+          0.13636595125800358,
+          0.31888740182205755
+        ],
+        "n": 400
+      },
+      "ece_verbal": 0.07527500000000002,
+      "brier_verbal": 0.18174925000000003,
+      "low_dis_err": 0.06153846153846154,
+      "low_dis_Uverbal": 0.16392307692307695,
+      "low_dis_n": 130,
+      "mid_dis_err": 0.14814814814814814,
+      "mid_dis_Uverbal": 0.20133333333333334,
+      "mid_dis_n": 135,
+      "high_dis_err": 0.48148148148148145,
+      "high_dis_Uverbal": 0.2103703703703704,
+      "high_dis_n": 135,
+      "epistemic_cluster_frac": 0.105,
+      "epistemic_cluster_n": 42,
+      "epistemic_cluster_err": 0.14285714285714285
+    }
+  ]
+}

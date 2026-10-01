@@ -11,19 +11,31 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+venv/
+.venv/
 
-# Data files (not redistributed)
+# Third-party corpora are not redistributed (see README "Data")
 data/
-results/
-*.parquet
+
+# Pipeline intermediates that contain corpus text or are large/regenerable.
+# The derived result files shipped in results/ are tracked explicitly.
+results/sarcasm/
+results/**/full_input_*.csv
+results/**/e3_input_*.csv
+results/**/multipico_hf_raw.parquet
+results/**/_ckpt_*
+results/**/*.log
+results/**/*.md
 *.pkl
 *.h5
 
-# Figures
+# Generated outputs
+paper_out/
 figures/
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
+.DS_Store
 *.DS_Store
 .ipynb_checkpoints/

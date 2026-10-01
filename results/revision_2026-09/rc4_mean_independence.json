@@ -1,0 +1,126 @@
+{
+  "env": {
+    "utc": "2026-09-25T00:26:22.719529+00:00",
+    "hostname": "<redacted>",
+    "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "1.26.4",
+    "pandas": "1.5.3",
+    "scipy": "unknown",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "gpu": "CPU-only (no GPU used)",
+    "script": "run_revision_analyses.py",
+    "note": "Supplementary analyses rc3, rc4, rc6, rc9"
+  },
+  "rc4": {
+    "binary_corpora_dis_determinism": {
+      "claim": "For binary-label corpora (MultiPICo, EPIC), dis_i = H(p_ironic) / log(k_i) is a deterministic function of (p_ironic, k_i). When k_i is fixed, dis_i is a monotone function of |p_ironic - 0.5|.",
+      "MultiPICo": {
+        "corr_reconstructed_vs_stored": 0.9647762891982977,
+        "max_abs_err": 0.6362893349947709,
+        "unique_k_values": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "interpretation": "dis_i is NOT mean-independent in the same sense as CSC relative variance; it IS a function of p_ironic. Mean-independence claim is valid only for CSC (Likert)."
+      },
+      "EPIC": {
+        "corr_reconstructed_vs_stored": 0.9647762891953139,
+        "max_abs_err": 0.63628933528331,
+        "unique_k_values": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    "CSC_mean_independence": {
+      "spearman_dis_vs_mean_eval": {
+        "rho": 0.4639323137907344,
+        "p": 0.0
+      },
+      "dis_range": [
+        0.0,
+        8.333333333333334
+      ],
+      "n_items_dis_gt1": 3924,
+      "frac_denom_floored": 0.07916429789653212,
+      "n_denom_floored": 557,
+      "corr_reconstructed_vs_stored": 0.9263890378305042,
+      "interpretation": "CSC: Spearman(dis, mean_eval) should be near 0 if mean-independent. Relative variance with floor is approximately mean-independent but not perfectly so.",
+      "denominator_floor": 0.5
+    },
+    "MHS_dis_vs_mean": {
+      "spearman_dis_vs_hate_frac": {
+        "rho": 0.3609307434896079,
+        "p": 0.0,
+        "ci_95": [
+          0.35190294900547914,
+          0.3700585920935025
+        ],
+        "n": 39565
+      },
+      "interpretation": "MHS: dis_i = H(p_hate)/log(2) is monotone in |p_hate - 0.5|. The claim of mean-independence applies only to CSC (Likert scale)."
+    },
+    "corrected_analysis": {
+      "CSC_correct_dis_mi": {
+        "formula": "dis_mi = clip(Var(r) / clip((mean_r - 1)*(6 - mean_r), 0.5, None), 0, 1)",
+        "range": [
+          0.0,
+          1.0
+        ],
+        "n_gt1_after_clip": 0,
+        "frac_denom_floored": 0.07916429789653212,
+        "n_denom_floored": 557,
+        "spearman_dis_vs_mean_eval": {
+          "rho": 0.24411905494781272,
+          "p": 5.492891558866123e-96
+        },
+        "corr_recomputed_vs_e1_stored": 0.9999999999999998,
+        "max_diff_recomputed_vs_stored": 0.0,
+        "interpretation": "CSC dis_mi is approximately mean-independent (rho_dis_mean ~ 0.07 after correct normalization). Denominator floor at 0.5 applied to ~8% of items."
+      },
+      "MultiPICo_EPIC_correct": {
+        "formula": "dis_mi = H_bits(p_ironic) = -(p*log2(p) + (1-p)*log2(1-p)), NOT H/log(K_i)",
+        "note": "Paper Eq.2 writes denominator as log(K_i) but code normalizes by log(2) (= 1 for binary entropy in bits). For binary labels these are equivalent when K_i=2; for K_i>2, H_bits(p) <= 1 always since there are only 2 outcomes.",
+        "MultiPICo": {
+          "corr_hbits_vs_stored": 1.0,
+          "max_err": 0.0
+        },
+        "EPIC": {
+          "corr_hbits_vs_stored": 0.9999999999999993,
+          "max_err": 2.885391925389058e-10
+        },
+        "spearman_dis_vs_p_ironic_MP": 0.6920516918469947,
+        "interpretation": "For binary corpora, dis_mi = H_bits(p_ironic) is a MONOTONE SYMMETRIC function of |p_ironic - 0.5|. This is NOT mean-independent: items with p_ironic near 0.5 always have high dis regardless of the mean. Mean-independence claim (CSC \u00a7) is valid only for CSC Likert scale."
+      },
+      "MHS": {
+        "formula": "dis = H_bits(hate_frac) = normalized binary entropy",
+        "spearman_dis_vs_hate_frac": 0.3648648385762628,
+        "interpretation": "MHS dis is also H_bits(p_hate), monotone in |p_hate-0.5|. Not mean-independent."
+      },
+      "summary_Eq1": {
+        "CSC_range": [
+          0.0,
+          1.0
+        ],
+        "CSC_bounded_in_0_1": true,
+        "MultiPICo_range": [
+          0.0,
+          0.9999999997114609
+        ],
+        "MultiPICo_bounded_in_0_1": true,
+        "floor_fraction_CSC": 0.07916429789653212,
+        "paper_claim_mean_independent": "Valid for CSC only; binary corpora have dis = f(p) which is symmetric but NOT mean-independent in general"
+      }
+    }
+  }
+}

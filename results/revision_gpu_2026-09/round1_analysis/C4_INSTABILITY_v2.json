@@ -1,0 +1,259 @@
+{
+  "analysis": "C4 corrected: annotator-level resampling with REAL annotator data",
+  "correction_note": "CSC: resampled from actual per-annotator Likert scores (csc_data_full.csv). EPIC: labels reconstructed from p_ironic*n_annotators (raw not available). MultiPICo: from multipico_hf_raw.parquet per-annotator binary labels.",
+  "n_inst_resamplings": 200,
+  "n_bootstrap": 4000,
+  "bootstrap_seed": 42,
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.3904,
+        "note": "annotator-level resampling with REAL annotator data (NOT back-inferred)",
+        "source": "csc_data_full.csv"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 7036,
+          "asym_acc": 0.1364,
+          "ci_95": [
+            0.1025,
+            0.1703
+          ],
+          "p_boot_raw": 0.5182,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 7036,
+          "asym_acc": 0.1364,
+          "ci_95": [
+            0.1025,
+            0.1703
+          ],
+          "p_boot_raw": 0.5182,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 1920,
+          "asym_acc": 0.103,
+          "ci_95": [
+            0.0252,
+            0.1784
+          ],
+          "p_boot_raw": 0.5018,
+          "n_bootstrap": 4000
+        }
+      }
+    },
+    "EPIC": {
+      "n": 2999,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.3625,
+        "note": "annotator-level resampling with REAL annotator data (NOT back-inferred)",
+        "source": "epic_aggregated.parquet (labels reconstructed from p_ironic)"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 2999,
+          "asym_acc": 0.3134,
+          "ci_95": [
+            0.2411,
+            0.385
+          ],
+          "p_boot_raw": 0.4918,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 2784,
+          "asym_acc": 0.3146,
+          "ci_95": [
+            0.2367,
+            0.3891
+          ],
+          "p_boot_raw": 0.5102,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 1922,
+          "asym_acc": 0.294,
+          "ci_95": [
+            0.1984,
+            0.3903
+          ],
+          "p_boot_raw": 0.4785,
+          "n_bootstrap": 4000
+        }
+      }
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.3527,
+        "note": "annotator-level resampling from multipico_hf_raw.parquet (item_id fixed)",
+        "source": "multipico_hf_raw.parquet",
+        "item_id_key_format": "mp_es_{reply_id}"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 4681,
+          "asym_acc": 0.3134,
+          "ci_95": [
+            0.2573,
+            0.3698
+          ],
+          "p_boot_raw": 0.4958,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 4581,
+          "asym_acc": 0.3232,
+          "ci_95": [
+            0.2682,
+            0.3811
+          ],
+          "p_boot_raw": 0.501,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 3743,
+          "asym_acc": 0.3361,
+          "ci_95": [
+            0.2712,
+            0.3973
+          ],
+          "p_boot_raw": 0.5078,
+          "n_bootstrap": 4000
+        }
+      }
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.2545,
+        "note": "annotator-level resampling from multipico_hf_raw.parquet (item_id fixed)",
+        "source": "multipico_hf_raw.parquet",
+        "item_id_key_format": "mp_de_{reply_id}"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 2370,
+          "asym_acc": 0.2184,
+          "ci_95": [
+            0.1452,
+            0.2907
+          ],
+          "p_boot_raw": 0.508,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 2252,
+          "asym_acc": 0.2195,
+          "ci_95": [
+            0.1473,
+            0.2942
+          ],
+          "p_boot_raw": 0.5048,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 1682,
+          "asym_acc": 0.2265,
+          "ci_95": [
+            0.1349,
+            0.319
+          ],
+          "p_boot_raw": 0.5065,
+          "n_bootstrap": 4000
+        }
+      }
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.2845,
+        "note": "annotator-level resampling from multipico_hf_raw.parquet (item_id fixed)",
+        "source": "multipico_hf_raw.parquet",
+        "item_id_key_format": "mp_fr_{reply_id}"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 1760,
+          "asym_acc": 0.3146,
+          "ci_95": [
+            0.2241,
+            0.4024
+          ],
+          "p_boot_raw": 0.484,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 1748,
+          "asym_acc": 0.3166,
+          "ci_95": [
+            0.2258,
+            0.4088
+          ],
+          "p_boot_raw": 0.4903,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 1616,
+          "asym_acc": 0.3247,
+          "ci_95": [
+            0.2273,
+            0.4218
+          ],
+          "p_boot_raw": 0.5142,
+          "n_bootstrap": 4000
+        }
+      }
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "stratum_instability": {
+        "n_resamplings": 200,
+        "frac_changing_tercile": 0.5793,
+        "note": "annotator-level resampling from multipico_hf_raw.parquet (item_id fixed)",
+        "source": "multipico_hf_raw.parquet",
+        "item_id_key_format": "mp_it_{reply_id}"
+      },
+      "dasym_by_ki_filter": {
+        "all": {
+          "n": 998,
+          "asym_acc": 0.2174,
+          "ci_95": [
+            0.1076,
+            0.324
+          ],
+          "p_boot_raw": 0.5105,
+          "n_bootstrap": 4000
+        },
+        "ki_ge4": {
+          "n": 984,
+          "asym_acc": 0.229,
+          "ci_95": [
+            0.1212,
+            0.3407
+          ],
+          "p_boot_raw": 0.4915,
+          "n_bootstrap": 4000
+        },
+        "ki_ge5": {
+          "n": 784,
+          "asym_acc": 0.2788,
+          "ci_95": [
+            0.152,
+            0.4046
+          ],
+          "p_boot_raw": 0.5092,
+          "n_bootstrap": 4000
+        }
+      }
+    }
+  }
+}

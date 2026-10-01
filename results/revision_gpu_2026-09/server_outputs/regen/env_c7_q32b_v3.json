@@ -1,0 +1,33 @@
+{
+  "script": "kbs/gpu_sweep/run_gpu_sweep_regen_v3.py",
+  "mode": "c7",
+  "tag": "q32b",
+  "model_id": "Qwen/Qwen2.5-32B-Instruct",
+  "cap_B": 32.0,
+  "trust_remote_code": true,
+  "K": 10,
+  "temperature": 1.0,
+  "batch_size_init": 4,
+  "utc_start": "2026-09-25T13:22:19.007177+00:00",
+  "hostname": "<redacted>",
+  "git_commit": "unknown",
+  "seed": 42,
+  "corpora": [
+    "EPIC",
+    "MultiPICo_es",
+    "MultiPICo_de",
+    "MultiPICo_fr",
+    "MultiPICo_it"
+  ],
+  "CUDA_VISIBLE_DEVICES": "0",
+  "dry_run": false,
+  "nvidia_smi_before": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 2 MiB, 97247 MiB, 0 %",
+  "du_before_GB": 89,
+  "EPIC_n": 2999,
+  "MultiPICo_es_n": 4681,
+  "MultiPICo_de_n": 2370,
+  "MultiPICo_fr_n": 1760,
+  "MultiPICo_it_n": 998,
+  "nvidia_smi_after": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 774 MiB, 96475 MiB, 96 %",
+  "utc_end": "2026-09-25T16:37:07.498997+00:00"
+}

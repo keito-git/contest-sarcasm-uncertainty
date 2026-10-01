@@ -1,0 +1,159 @@
+{
+  "analysis": "C6: Probe variant with 14B as middle model",
+  "description": "|p_14b - p_0.5b| among 0.5B errors predicting 32B fixes",
+  "n_bootstrap": 4000,
+  "bootstrap_seed": 42,
+  "caution": "14B model is close to 32B in capacity; higher AUROC expected but has limited practical relevance for cheap routing. Labeled as variant in paper.",
+  "per_corpus": {
+    "CSC": {
+      "n_total": 7036,
+      "n_q0p5b_wrong": 2473,
+      "n_fix": 1766,
+      "base_rate": 0.7141,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.7951,
+        "ci_95": [
+          0.7765,
+          0.814
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.4132,
+        "ci_95": [
+          0.3894,
+          0.4378
+        ],
+        "n_bootstrap": 4000
+      }
+    },
+    "EPIC": {
+      "n_total": 2999,
+      "n_q0p5b_wrong": 1553,
+      "n_fix": 1129,
+      "base_rate": 0.727,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.7365,
+        "ci_95": [
+          0.7073,
+          0.7642
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.6632,
+        "ci_95": [
+          0.6326,
+          0.6931
+        ],
+        "n_bootstrap": 4000
+      }
+    },
+    "MultiPICo_es": {
+      "n_total": 4681,
+      "n_q0p5b_wrong": 2682,
+      "n_fix": 2013,
+      "base_rate": 0.7506,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.7446,
+        "ci_95": [
+          0.7225,
+          0.766
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.6393,
+        "ci_95": [
+          0.6141,
+          0.6638
+        ],
+        "n_bootstrap": 4000
+      }
+    },
+    "MultiPICo_de": {
+      "n_total": 2370,
+      "n_q0p5b_wrong": 1203,
+      "n_fix": 882,
+      "base_rate": 0.7332,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.748,
+        "ci_95": [
+          0.7176,
+          0.7789
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.5925,
+        "ci_95": [
+          0.5565,
+          0.6276
+        ],
+        "n_bootstrap": 4000
+      }
+    },
+    "MultiPICo_fr": {
+      "n_total": 1760,
+      "n_q0p5b_wrong": 1075,
+      "n_fix": 819,
+      "base_rate": 0.7619,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.7287,
+        "ci_95": [
+          0.6928,
+          0.7641
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.6072,
+        "ci_95": [
+          0.566,
+          0.6459
+        ],
+        "n_bootstrap": 4000
+      }
+    },
+    "MultiPICo_it": {
+      "n_total": 998,
+      "n_q0p5b_wrong": 576,
+      "n_fix": 443,
+      "base_rate": 0.7691,
+      "probe_14b": {
+        "probe": "|p_14b - p_0.5b|  (C6 variant: middle model closer to target)",
+        "AUROC": 0.758,
+        "ci_95": [
+          0.7106,
+          0.8027
+        ],
+        "n_bootstrap": 4000,
+        "warning": "14B is close to 32B; this variant uses a middle model nearly as large as the target, which makes the probe more powerful but less informative as a routing signal in practice"
+      },
+      "primary_probe_q3b": {
+        "probe": "|p_3b - p_0.5b|",
+        "AUROC": 0.5845,
+        "ci_95": [
+          0.5317,
+          0.6376
+        ],
+        "n_bootstrap": 4000
+      }
+    }
+  }
+}

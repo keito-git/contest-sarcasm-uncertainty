@@ -1,0 +1,190 @@
+{
+  "analysis": "C2b_v4: corrected annotator-noise null (rank-based terciles, C1-aligned)",
+  "description": "Null: latent z_i~Bern(p_i), constant-BAC model, reference=majority_vote of k_i resampled from p_i. Strata from resampled dis via rank-based tercile_labels (same as C1 pipeline). Observed ΔAsym = C1_DASYM_CI.json values. Noise-corrected excess = observed - null_mean; CI from bootstrap over simulations.",
+  "seed": 42,
+  "n_sims": 1000,
+  "bootstrap_excess_n": 2000,
+  "generated": "2026-09-27T14:40:09.118538+00:00",
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "observed_dasym": 0.1364,
+      "c1_ref_dasym": 0.1364,
+      "c1_match": true,
+      "terc_dist_obs": [
+        2458,
+        2223,
+        2355
+      ],
+      "bac_0p5b": 0.5413,
+      "bac_32b": 0.6953,
+      "n_sims": 1000,
+      "null_mean": 0.0728,
+      "null_sd": 0.028,
+      "null_ci95": [
+        0.0181,
+        0.1281
+      ],
+      "empirical_p": 0.014,
+      "noise_corrected_excess": 0.0637,
+      "noise_corrected_excess_ci95": [
+        0.062,
+        0.0654
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.161,
+      "positive_control_asym_p97.5": 0.2192
+    },
+    "EPIC": {
+      "n": 2999,
+      "observed_dasym": 0.3134,
+      "c1_ref_dasym": 0.3134,
+      "c1_match": true,
+      "terc_dist_obs": [
+        1000,
+        1025,
+        974
+      ],
+      "bac_0p5b": 0.4331,
+      "bac_32b": 0.6842,
+      "n_sims": 1000,
+      "null_mean": 0.1584,
+      "null_sd": 0.0339,
+      "null_ci95": [
+        0.0941,
+        0.2232
+      ],
+      "empirical_p": 0.0,
+      "noise_corrected_excess": 0.155,
+      "noise_corrected_excess_ci95": [
+        0.153,
+        0.1572
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.2744,
+      "positive_control_asym_p97.5": 0.3383
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "observed_dasym": 0.3134,
+      "c1_ref_dasym": 0.3134,
+      "c1_match": true,
+      "terc_dist_obs": [
+        1550,
+        1592,
+        1539
+      ],
+      "bac_0p5b": 0.4636,
+      "bac_32b": 0.6835,
+      "n_sims": 1000,
+      "null_mean": 0.1436,
+      "null_sd": 0.0261,
+      "null_ci95": [
+        0.0922,
+        0.1924
+      ],
+      "empirical_p": 0.0,
+      "noise_corrected_excess": 0.1697,
+      "noise_corrected_excess_ci95": [
+        0.1681,
+        0.1713
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.2606,
+      "positive_control_asym_p97.5": 0.305
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "observed_dasym": 0.2184,
+      "c1_ref_dasym": 0.2184,
+      "c1_match": true,
+      "terc_dist_obs": [
+        940,
+        557,
+        873
+      ],
+      "bac_0p5b": 0.4815,
+      "bac_32b": 0.7178,
+      "n_sims": 1000,
+      "null_mean": 0.1583,
+      "null_sd": 0.0354,
+      "null_ci95": [
+        0.0868,
+        0.2251
+      ],
+      "empirical_p": 0.034,
+      "noise_corrected_excess": 0.0601,
+      "noise_corrected_excess_ci95": [
+        0.0579,
+        0.0622
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.2852,
+      "positive_control_asym_p97.5": 0.3398
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "observed_dasym": 0.3146,
+      "c1_ref_dasym": 0.3146,
+      "c1_match": true,
+      "terc_dist_obs": [
+        736,
+        507,
+        517
+      ],
+      "bac_0p5b": 0.4413,
+      "bac_32b": 0.7107,
+      "n_sims": 1000,
+      "null_mean": 0.1869,
+      "null_sd": 0.0448,
+      "null_ci95": [
+        0.0948,
+        0.2666
+      ],
+      "empirical_p": 0.001,
+      "noise_corrected_excess": 0.1277,
+      "noise_corrected_excess_ci95": [
+        0.1249,
+        0.1304
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.3116,
+      "positive_control_asym_p97.5": 0.3999
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "observed_dasym": 0.2174,
+      "c1_ref_dasym": 0.2174,
+      "c1_match": true,
+      "terc_dist_obs": [
+        458,
+        235,
+        305
+      ],
+      "bac_0p5b": 0.4438,
+      "bac_32b": 0.7446,
+      "n_sims": 1000,
+      "null_mean": 0.2004,
+      "null_sd": 0.0769,
+      "null_ci95": [
+        0.0541,
+        0.3483
+      ],
+      "empirical_p": 0.392,
+      "noise_corrected_excess": 0.0169,
+      "noise_corrected_excess_ci95": [
+        0.0121,
+        0.0216
+      ],
+      "positive_control_gamma": 0.15,
+      "positive_control_n_sims": 200,
+      "positive_control_asym_mean": 0.3151,
+      "positive_control_asym_p97.5": 0.4651
+    }
+  }
+}

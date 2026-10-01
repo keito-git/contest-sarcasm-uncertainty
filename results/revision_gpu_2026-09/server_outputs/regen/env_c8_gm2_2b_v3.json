@@ -1,0 +1,31 @@
+{
+  "script": "kbs/gpu_sweep/run_gpu_sweep_regen_v3.py",
+  "mode": "c8",
+  "tag": "gm2_2b",
+  "model_id": "stabilityai/stablelm-zephyr-3b",
+  "cap_B": 3.0,
+  "trust_remote_code": false,
+  "K": 10,
+  "temperature": 1.0,
+  "batch_size_init": 8,
+  "utc_start": "2026-09-25T17:39:00.655492+00:00",
+  "hostname": "<redacted>",
+  "git_commit": "unknown",
+  "seed": 42,
+  "corpora": [
+    "MultiPICo_es",
+    "MultiPICo_de",
+    "MultiPICo_fr",
+    "MultiPICo_it"
+  ],
+  "CUDA_VISIBLE_DEVICES": "0",
+  "dry_run": false,
+  "nvidia_smi_before": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 2 MiB, 97247 MiB, 0 %",
+  "du_before_GB": 20,
+  "MultiPICo_es_n": 4681,
+  "MultiPICo_de_n": 2370,
+  "MultiPICo_fr_n": 1760,
+  "MultiPICo_it_n": 998,
+  "nvidia_smi_after": "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 698 MiB, 96551 MiB, 94 %",
+  "utc_end": "2026-09-25T18:04:10.236414+00:00"
+}

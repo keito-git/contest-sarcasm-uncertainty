@@ -1,0 +1,538 @@
+{
+  "env": {
+    "utc": "2026-09-25T00:26:22.719529+00:00",
+    "hostname": "<redacted>",
+    "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "1.26.4",
+    "pandas": "1.5.3",
+    "scipy": "unknown",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "gpu": "CPU-only (no GPU used)",
+    "script": "run_revision_analyses.py",
+    "note": "Supplementary analyses rc3, rc4, rc6, rc9"
+  },
+  "rc6": {
+    "logprob_normalization": {
+      "status": "not_computable",
+      "reason": "Only p_yes_lp (log-prob of predicted label token) is saved in e1 parquet files. The complementary p_no_lp was not saved. Two-label normalized probability p_yes/(p_yes+p_no) cannot be recomputed from saved data. The original U_logprob = 1 - exp(log_p_yes_lp) uses only the top-logprob of the predicted token.",
+      "recommendation": "Superseded by run_corrections.py (rc6_logprob_fixed.json): p_yes_lp is already two-label normalized."
+    },
+    "signal_metrics": [
+      {
+        "corpus": "CSC",
+        "provider": "gpt",
+        "signal": "U_verbal",
+        "n": 397,
+        "raw_spearman": {
+          "rho": 0.1399057229591571,
+          "p": 0.005229296078906436,
+          "ci_95": [
+            0.04344116980209786,
+            0.23100868930331844
+          ],
+          "n": 397
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5833194096351991,
+        "mutual_information": {
+          "mi_observed": 0.036227473271237584,
+          "mi_bias_corrected": 0.012102541278342586,
+          "permutation_mean": 0.024124931992894998,
+          "p_permutation": 0.083,
+          "n": 397
+        },
+        "isotonic_r2_signal_vs_dis": 0.018718382620853236,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.1399057229591571,
+            "p": 0.005229296078906436,
+            "ci_95": [
+              0.037638261427768493,
+              0.23690632436865144
+            ],
+            "n": 397
+          },
+          "1": {
+            "status": "too_few",
+            "n": 0
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "CSC",
+        "provider": "gpt",
+        "signal": "U_logprob",
+        "n": 397,
+        "raw_spearman": {
+          "rho": -0.1186130191205766,
+          "p": 0.018066742695290714,
+          "ci_95": [
+            -0.22178887359943755,
+            -0.01355619108123191
+          ],
+          "n": 397
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.41617933723196887,
+        "mutual_information": {
+          "mi_observed": 0.17005829144718312,
+          "mi_bias_corrected": 0.05936472502671521,
+          "permutation_mean": 0.11069356642046792,
+          "p_permutation": 0.001,
+          "n": 397
+        },
+        "isotonic_r2_signal_vs_dis": 0.0016397444898811342,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.07724774227270963,
+            "p": 0.2639546983539611,
+            "ci_95": [
+              -0.055455382147492835,
+              0.2089307961537613
+            ],
+            "n": 211
+          },
+          "1": {
+            "rho": -0.1945674180095109,
+            "p": 0.0077876999688054485,
+            "ci_95": [
+              -0.3294945536147603,
+              -0.06224791670301542
+            ],
+            "n": 186
+          }
+        },
+        "logprob_normalization_status": "p_yes_lp saved but p_no_lp not saved in e1 parquet files. Two-token normalization p_yes/(p_yes+p_no) cannot be computed from saved data."
+      },
+      {
+        "corpus": "CSC",
+        "provider": "claude",
+        "signal": "U_verbal",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.11523452818396357,
+          "p": 0.021157499601966414,
+          "ci_95": [
+            0.0051961235643891565,
+            0.21497474569018915
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5814270152505446,
+        "mutual_information": {
+          "mi_observed": 0.09383972775232595,
+          "mi_bias_corrected": 0.04515811480872301,
+          "permutation_mean": 0.04868161294360294,
+          "p_permutation": 0.001,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.019667550932995992,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.10909096641317519,
+            "p": 0.029968841761204776,
+            "ci_95": [
+              0.0019301694838963694,
+              0.21342076692727105
+            ],
+            "n": 396
+          },
+          "1": {
+            "status": "too_few",
+            "n": 4
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "MultiPICo",
+        "provider": "gpt",
+        "signal": "U_verbal",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.2033807741276043,
+          "p": 4.171085206223795e-05,
+          "ci_95": [
+            0.10742673890963718,
+            0.30032301401930905
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6263926238955052,
+        "mutual_information": {
+          "mi_observed": 0.025565145558506454,
+          "mi_bias_corrected": 0.012016803170114741,
+          "permutation_mean": 0.013548342388391713,
+          "p_permutation": 0.025,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.03822357013695743,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.2033807741276043,
+            "p": 4.171085206223795e-05,
+            "ci_95": [
+              0.110104836560603,
+              0.2997367270621489
+            ],
+            "n": 400
+          },
+          "1": {
+            "status": "too_few",
+            "n": 0
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "MultiPICo",
+        "provider": "gpt",
+        "signal": "U_logprob",
+        "n": 400,
+        "raw_spearman": {
+          "rho": -0.22266636755996724,
+          "p": 6.925733204601798e-06,
+          "ci_95": [
+            -0.3138666339737565,
+            -0.11703723896262827
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.34756599528017124,
+        "mutual_information": {
+          "mi_observed": 0.07628301052473198,
+          "mi_bias_corrected": 0.02700505626894585,
+          "permutation_mean": 0.04927795425578613,
+          "p_permutation": 0.01,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.00601168484555159,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.07234377657406144,
+            "p": 0.3617777515177004,
+            "ci_95": [
+              -0.09171323889568125,
+              0.22742166211867434
+            ],
+            "n": 161
+          },
+          "1": {
+            "rho": -0.28456545246726606,
+            "p": 7.860482369178605e-06,
+            "ci_95": [
+              -0.4106150354950431,
+              -0.15650101985169357
+            ],
+            "n": 239
+          }
+        },
+        "logprob_normalization_status": "p_yes_lp saved but p_no_lp not saved in e1 parquet files. Two-token normalization p_yes/(p_yes+p_no) cannot be computed from saved data."
+      },
+      {
+        "corpus": "MultiPICo",
+        "provider": "claude",
+        "signal": "U_verbal",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.29975750904860304,
+          "p": 9.497853841973096e-10,
+          "ci_95": [
+            0.2117339070985884,
+            0.3817724587832271
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6942813237473245,
+        "mutual_information": {
+          "mi_observed": 0.05176399389802572,
+          "mi_bias_corrected": 0.035839648981045254,
+          "permutation_mean": 0.015924344916980464,
+          "p_permutation": 0.0,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.09669762082590438,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.3202842434059395,
+            "p": 8.900346163100746e-11,
+            "ci_95": [
+              0.22814018520651316,
+              0.41151284492118473
+            ],
+            "n": 391
+          },
+          "1": {
+            "status": "too_few",
+            "n": 9
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "EPIC",
+        "provider": "gpt",
+        "signal": "U_verbal",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.2262265839012993,
+          "p": 4.883057015589196e-06,
+          "ci_95": [
+            0.1321107742090192,
+            0.3187469552024419
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6313241345921085,
+        "mutual_information": {
+          "mi_observed": 0.028688549919424947,
+          "mi_bias_corrected": 0.013528667885035456,
+          "permutation_mean": 0.01515988203438949,
+          "p_permutation": 0.031,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.05003270474248245,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.2262265839012993,
+            "p": 4.883057015589196e-06,
+            "ci_95": [
+              0.13777861670560715,
+              0.3128119644527977
+            ],
+            "n": 400
+          },
+          "1": {
+            "status": "too_few",
+            "n": 0
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "EPIC",
+        "provider": "gpt",
+        "signal": "U_logprob",
+        "n": 400,
+        "raw_spearman": {
+          "rho": -0.313267174116486,
+          "p": 1.4770179545955498e-10,
+          "ci_95": [
+            -0.4005594594299106,
+            -0.2205818075242367
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.3006535947712418,
+        "mutual_information": {
+          "mi_observed": 0.088130556010493,
+          "mi_bias_corrected": 0.04032889401155598,
+          "permutation_mean": 0.04780166199893701,
+          "p_permutation": 0.0,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.01152662566941498,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": -0.031108150859337866,
+            "p": 0.7017275516396464,
+            "ci_95": [
+              -0.18947869347735968,
+              0.12116594461559624
+            ],
+            "n": 154
+          },
+          "1": {
+            "rho": -0.25830776224158325,
+            "p": 4.121347590581445e-05,
+            "ci_95": [
+              -0.3696308657615049,
+              -0.13730803706043013
+            ],
+            "n": 246
+          }
+        },
+        "logprob_normalization_status": "p_yes_lp saved but p_no_lp not saved in e1 parquet files. Two-token normalization p_yes/(p_yes+p_no) cannot be computed from saved data."
+      },
+      {
+        "corpus": "EPIC",
+        "provider": "claude",
+        "signal": "U_verbal",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.2261288179180731,
+          "p": 4.930518312694092e-06,
+          "ci_95": [
+            0.13765520222477268,
+            0.31956139355679336
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6449770031469378,
+        "mutual_information": {
+          "mi_observed": 0.04977541296398724,
+          "mi_bias_corrected": 0.03380852380441203,
+          "permutation_mean": 0.015966889159575216,
+          "p_permutation": 0.0,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.05237463655057706,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.24399321335831234,
+            "p": 1.3471720772685315e-06,
+            "ci_95": [
+              0.1475737591124829,
+              0.3377478772883914
+            ],
+            "n": 383
+          },
+          "1": {
+            "rho": -0.13835383502529036,
+            "p": 0.5964205531100918,
+            "ci_95": [
+              NaN,
+              NaN
+            ],
+            "n": 17
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "CSC",
+        "provider": "qwen14b",
+        "signal": "U_sampling_entropy",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.021430094386296755,
+          "p": 0.6691538023236236,
+          "ci_95": [
+            -0.06508013511779381,
+            0.10971323144973102
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5151143790849673,
+        "mutual_information": {
+          "mi_observed": 0.018412824647731182,
+          "mi_bias_corrected": 0.006343591048787314,
+          "permutation_mean": 0.012069233598943869,
+          "p_permutation": 0.137,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.0019281444039682683,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": -0.03126876940421541,
+            "p": 0.5526187578179216,
+            "ci_95": [
+              -0.11616827130096961,
+              0.052641222188652165
+            ],
+            "n": 363
+          },
+          "1": {
+            "rho": -0.15235358555101802,
+            "p": 0.3680170739983712,
+            "ci_95": [
+              -0.454771450095305,
+              0.1697037148244897
+            ],
+            "n": 37
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "MultiPICo",
+        "provider": "qwen14b",
+        "signal": "U_sampling_entropy",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.07192464741063101,
+          "p": 0.15104464475293086,
+          "ci_95": [
+            -0.012682362681260826,
+            0.1609969719694164
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5305416826738379,
+        "mutual_information": {
+          "mi_observed": 0.0023804836052192884,
+          "mi_bias_corrected": -0.0031948307563834156,
+          "permutation_mean": 0.005575314361602704,
+          "p_permutation": 0.799,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.012483810262202799,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.05119692911128268,
+            "p": 0.33002950685320026,
+            "ci_95": [
+              NaN,
+              NaN
+            ],
+            "n": 364
+          },
+          "1": {
+            "rho": -0.17410151426725073,
+            "p": 0.3098554543576792,
+            "ci_95": [
+              -0.4680659246453809,
+              0.14095604636140202
+            ],
+            "n": 36
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      },
+      {
+        "corpus": "EPIC",
+        "provider": "qwen14b",
+        "signal": "U_sampling_entropy",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.05210103493322063,
+          "p": 0.29858815092283375,
+          "ci_95": [
+            -0.05477347693273795,
+            0.15464593876487429
+          ],
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5163882837085452,
+        "mutual_information": {
+          "mi_observed": -5.000000417451855e-10,
+          "mi_bias_corrected": 0.0,
+          "permutation_mean": -5.000000417451855e-10,
+          "p_permutation": 1.0,
+          "n": 400
+        },
+        "isotonic_r2_signal_vs_dis": 0.0012251952203262695,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.05715231015987578,
+            "p": 0.27025538444826824,
+            "ci_95": [
+              -0.05681486950950169,
+              0.15856980192065603
+            ],
+            "n": 374
+          },
+          "1": {
+            "rho": -0.16588344711228106,
+            "p": 0.41801062543374856,
+            "ci_95": [
+              -0.47775180255013633,
+              0.1832441342898553
+            ],
+            "n": 26
+          }
+        },
+        "logprob_normalization_status": "N/A"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "analysis": "C9_floor_v3: CSC denominator-floor sensitivity",
+  "description": "ΔAsym (0.5B→32B) on CSC under 4 conditions. denom_floor: 557 items with (me-1)*(6-me)<0.5 (mean_eval=1 or 6, unanimous). top_clip: items where var/denom > 1 before upper clip to 1 (166 items). Note: all denom_floored items have var=0 so dis=0 regardless of floor value; the 'floor sensitivity' here tests whether excluding unanimous items changes ΔAsym.",
+  "bootstrap_n": 4000,
+  "seed": 42,
+  "n_total_CSC": 7036,
+  "n_denom_floored": 557,
+  "n_top_clipped": 114,
+  "per_condition": {
+    "standard": {
+      "n": 7036,
+      "n_dropped": 0,
+      "dasym": 0.1352,
+      "ci95": [
+        0.1012,
+        0.1705
+      ],
+      "ci_excludes_zero": true,
+      "bootstrap_p_positive": 1.0
+    },
+    "drop_denom_floor": {
+      "n": 6479,
+      "n_dropped": 557,
+      "dasym": 0.0979,
+      "ci95": [
+        0.059,
+        0.1317
+      ],
+      "ci_excludes_zero": true,
+      "bootstrap_p_positive": 1.0
+    },
+    "drop_top_clip": {
+      "n": 6922,
+      "n_dropped": 114,
+      "dasym": 0.1334,
+      "ci95": [
+        0.0984,
+        0.1712
+      ],
+      "ci_excludes_zero": true,
+      "bootstrap_p_positive": 1.0
+    },
+    "drop_both": {
+      "n": 6365,
+      "n_dropped": 671,
+      "dasym": 0.0918,
+      "ci95": [
+        0.0544,
+        0.1266
+      ],
+      "ci_excludes_zero": true,
+      "bootstrap_p_positive": 1.0
+    }
+  }
+}

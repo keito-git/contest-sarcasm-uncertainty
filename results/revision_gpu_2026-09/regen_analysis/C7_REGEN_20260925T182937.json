@@ -1,0 +1,900 @@
+{
+  "method": "ΔAsym bootstrap K=4000 Holm–Bonferroni",
+  "declared_family_size": 12,
+  "corpora_analyzed": [
+    "CSC",
+    "EPIC",
+    "MultiPICo_es",
+    "MultiPICo_de",
+    "MultiPICo_fr",
+    "MultiPICo_it"
+  ],
+  "per_corpus_tercile_acc": {
+    "CSC": {
+      "n": 7036,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.5403
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.548
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.5361
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.5413
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.6053
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.5559
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.5566
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.5733
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.5607
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.558
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.5474
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.5553
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.6624
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.5934
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.5548
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.6043
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.7714
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.6747
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.6439
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.6981
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 2458,
+            "bal_acc": 0.771
+          },
+          "mid_dis": {
+            "n": 2223,
+            "bal_acc": 0.6805
+          },
+          "high_dis": {
+            "n": 2355,
+            "bal_acc": 0.6303
+          },
+          "all": {
+            "n": 7036,
+            "bal_acc": 0.6953
+          }
+        }
+      }
+    },
+    "EPIC": {
+      "n": 2999,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.3588
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.4589
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.4552
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.4331
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.5709
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.5306
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.4989
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.5299
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.5177
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.5025
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.5023
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.5061
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.6103
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.5588
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.5331
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.5608
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.7104
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.6374
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.5615
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.6317
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 1000,
+            "bal_acc": 0.7988
+          },
+          "mid_dis": {
+            "n": 1025,
+            "bal_acc": 0.713
+          },
+          "high_dis": {
+            "n": 974,
+            "bal_acc": 0.5818
+          },
+          "all": {
+            "n": 2999,
+            "bal_acc": 0.6842
+          }
+        }
+      }
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.404
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.4839
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.4843
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.4636
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.546
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.5388
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.5186
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.5339
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.5262
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.5189
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.5016
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.5152
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.576
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.5448
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.5108
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.5395
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.7104
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.6666
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.5566
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.6424
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 1550,
+            "bal_acc": 0.799
+          },
+          "mid_dis": {
+            "n": 1592,
+            "bal_acc": 0.7303
+          },
+          "high_dis": {
+            "n": 1539,
+            "bal_acc": 0.5659
+          },
+          "all": {
+            "n": 4681,
+            "bal_acc": 0.6835
+          }
+        }
+      }
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.4755
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.4669
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.4929
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.4815
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.5286
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.4921
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.4907
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.5052
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.5335
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.5061
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.5014
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.5121
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.6019
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.5283
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.5136
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.5469
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.7755
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.6101
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.5857
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.6615
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 940,
+            "bal_acc": 0.8082
+          },
+          "mid_dis": {
+            "n": 557,
+            "bal_acc": 0.7339
+          },
+          "high_dis": {
+            "n": 873,
+            "bal_acc": 0.6072
+          },
+          "all": {
+            "n": 2370,
+            "bal_acc": 0.7178
+          }
+        }
+      }
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.4009
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.4275
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.5004
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.4413
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.5535
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.5245
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.5193
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.5344
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.5257
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.5287
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.5041
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.5198
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.5607
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.5437
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.5103
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.549
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.7347
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.6477
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.5842
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.6651
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 736,
+            "bal_acc": 0.8198
+          },
+          "mid_dis": {
+            "n": 507,
+            "bal_acc": 0.6954
+          },
+          "high_dis": {
+            "n": 517,
+            "bal_acc": 0.6048
+          },
+          "all": {
+            "n": 1760,
+            "bal_acc": 0.7107
+          }
+        }
+      }
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "tags_available": [
+        "q0p5b",
+        "q1p5b",
+        "q3b",
+        "q7b",
+        "q14b",
+        "q32b"
+      ],
+      "caps_available": [
+        0.5,
+        1.5,
+        3.0,
+        7.0,
+        14.0,
+        32.0
+      ],
+      "bal_acc": {
+        "q0p5b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.4467
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.4722
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.4398
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.4438
+          }
+        },
+        "q1p5b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.5375
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.4993
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.4971
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.5113
+          }
+        },
+        "q3b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.4971
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.5079
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.5188
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.5066
+          }
+        },
+        "q7b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.5851
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.4952
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.5242
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.5444
+          }
+        },
+        "q14b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.7496
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.6581
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.5657
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.6726
+          }
+        },
+        "q32b": {
+          "low_dis": {
+            "n": 458,
+            "bal_acc": 0.838
+          },
+          "mid_dis": {
+            "n": 235,
+            "bal_acc": 0.748
+          },
+          "high_dis": {
+            "n": 305,
+            "bal_acc": 0.6137
+          },
+          "all": {
+            "n": 998,
+            "bal_acc": 0.7446
+          }
+        }
+      }
+    }
+  },
+  "asym_results": [
+    {
+      "corpus": "CSC",
+      "subset": "full",
+      "n": 7036,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.2307,
+      "delta_acc_high": 0.0943,
+      "asym_acc": 0.1364,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "CSC",
+      "subset": "orig400",
+      "n": 400,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.3007,
+      "delta_acc_high": 0.0589,
+      "asym_acc": 0.2418,
+      "p_boot_raw": 0.002,
+      "p_holm": 0.002,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "EPIC",
+      "subset": "full",
+      "n": 2999,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.44,
+      "delta_acc_high": 0.1266,
+      "asym_acc": 0.3134,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "EPIC",
+      "subset": "orig400",
+      "n": 400,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.4741,
+      "delta_acc_high": 0.1212,
+      "asym_acc": 0.3529,
+      "p_boot_raw": 0.001,
+      "p_holm": 0.002,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "MultiPICo_es",
+      "subset": "full",
+      "n": 4681,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.395,
+      "delta_acc_high": 0.0816,
+      "asym_acc": 0.3134,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "MultiPICo_de",
+      "subset": "full",
+      "n": 2370,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.3327,
+      "delta_acc_high": 0.1143,
+      "asym_acc": 0.2184,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "MultiPICo_fr",
+      "subset": "full",
+      "n": 1760,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.4189,
+      "delta_acc_high": 0.1044,
+      "asym_acc": 0.3146,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    },
+    {
+      "corpus": "MultiPICo_it",
+      "subset": "full",
+      "n": 998,
+      "sm_cap_B": 0.5,
+      "lg_cap_B": 32.0,
+      "delta_acc_low": 0.3914,
+      "delta_acc_high": 0.174,
+      "asym_acc": 0.2174,
+      "p_boot_raw": 0.0,
+      "p_holm": 0.0,
+      "sig_05_holm": true
+    }
+  ],
+  "notes": [
+    "MultiPICo-en dropped (87.7% text overlap with EPIC)",
+    "Non-EN MultiPICo sub-corpora (es/de/fr/it) used as independent corpora",
+    "Holm family = n_corpora × 2 (full + orig-400 subset) bootstrap tests",
+    "ΔAsym > 0 (p_holm < 0.05) supports paper's central claim"
+  ]
+}

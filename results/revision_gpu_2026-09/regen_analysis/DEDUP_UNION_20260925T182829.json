@@ -1,0 +1,17 @@
+{
+  "checked": true,
+  "n_EPIC": 2999,
+  "n_MultiPICo_en": 2999,
+  "overlap_by_text": 2611,
+  "overlap_rate": 0.8706,
+  "decision": "DROPPED_from_analysis",
+  "reason": "2611/2999 = 87.1% text overlap with EPIC",
+  "non_en_epic_overlaps": {
+    "es": 9,
+    "de": 1,
+    "fr": 1,
+    "it": 0
+  },
+  "non_en_max_overlap": 9,
+  "non_en_independent": true
+}

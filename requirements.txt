@@ -1,10 +1,12 @@
-datasets>=2.18.0
-pandas>=2.0.0
-numpy>=1.24.0
-scipy>=1.10.0
-scikit-learn>=1.3.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-openai>=1.30.0
-tqdm>=4.65.0
-pyarrow>=14.0.0
+# CPU analyses, numbers.tex and figures (kbs/analysis, kbs/paper, kbs/data_prep)
+numpy>=1.24
+pandas>=1.5
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+pyarrow>=14.0
+datasets>=2.18          # MultiPICo download (kbs/data_prep)
+vaderSentiment>=3.3     # kbs/data_prep/run_pilot_sarcasm.py (delta_lex)
+
+# API-based experiments (experiments/)
+openai>=1.30

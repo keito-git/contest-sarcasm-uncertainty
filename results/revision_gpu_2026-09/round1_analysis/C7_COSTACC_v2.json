@@ -1,0 +1,88 @@
+{
+  "analysis": "C7 corrected: COSTACC_REGEN-consistent definition",
+  "correction_note": "Budget inverted: 0=all3B, 1=all32B. AUBAC=mean (not trapz). Routing direction corrected: high-score→32B. Contraction: high |p3B-p0.5B| → 32B. Oracle: low dis → 32B. Confidence: low |2p3B-1| → 32B.",
+  "n_random_seeds": 100,
+  "reconciliation_with_costacc_regen": {
+    "contradiction": "C7 v1 (round1_analysis): EPIC contraction=0.6130 > random=0.5953. COSTACC_REGEN.json: EPIC contraction=0.5773 < random=0.5917.",
+    "definitional_differences": [
+      "1. BUDGET AXIS DIRECTION (primary cause): v1 had budget=0=all32B, budget=1=all3B. COSTACC_REGEN/v2: budget=0=all3B, budget=1=all32B. This reversal changes which routing 'looks good': v1 started from 32B and REMOVED it; v2 starts from 3B and ADDS 32B.",
+      "2. ROUTING DIRECTION BUG (primary cause): v1 code had order_cont=-|p3B-p0.5B|, argsort ascending → HIGHEST contraction items used 3B first (WRONG). The code comment said 'small contraction → 3B' but implementation did the opposite: sorted highest-contraction indices first. v2 correct: score_cont = |p3B-p0.5B|; argsort(-score) → highest first → 32B.",
+      "3. AUBAC (minor): v1 used np.trapz; COSTACC_REGEN and v2 use np.mean. For 21-pt uniform grid, the difference is <0.001."
+    ],
+    "key_finding": "With the correct COSTACC_REGEN definition (budget=0=3B, high-contraction→32B), EPIC contraction AUBAC < random, consistent with COSTACC_REGEN.json (0.5773 < 0.5917). This is expected: EPIC irony is highly aleatoric — even knowing the capacity gap does not reliably predict which items 32B will fix."
+  },
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "aubac_random_mean": 0.6251,
+      "aubac_random_p2.5": 0.6201,
+      "aubac_random_p97.5": 0.6307,
+      "aubac_oracle_low_dis": 0.6402,
+      "aubac_conf_low_conf": 0.6301,
+      "aubac_contraction": 0.6333,
+      "aubac_3b_only": 0.5553,
+      "aubac_32b_only": 0.6953,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    },
+    "EPIC": {
+      "n": 2999,
+      "aubac_random_mean": 0.5953,
+      "aubac_random_p2.5": 0.5875,
+      "aubac_random_p97.5": 0.6027,
+      "aubac_oracle_low_dis": 0.5677,
+      "aubac_conf_low_conf": 0.5996,
+      "aubac_contraction": 0.5782,
+      "aubac_3b_only": 0.5061,
+      "aubac_32b_only": 0.6842,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "aubac_random_mean": 0.5994,
+      "aubac_random_p2.5": 0.5937,
+      "aubac_random_p97.5": 0.6046,
+      "aubac_oracle_low_dis": 0.5927,
+      "aubac_conf_low_conf": 0.6011,
+      "aubac_contraction": 0.5884,
+      "aubac_3b_only": 0.5152,
+      "aubac_32b_only": 0.6835,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "aubac_random_mean": 0.6148,
+      "aubac_random_p2.5": 0.6061,
+      "aubac_random_p97.5": 0.6232,
+      "aubac_oracle_low_dis": 0.5988,
+      "aubac_conf_low_conf": 0.6202,
+      "aubac_contraction": 0.6101,
+      "aubac_3b_only": 0.5121,
+      "aubac_32b_only": 0.7178,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "aubac_random_mean": 0.6148,
+      "aubac_random_p2.5": 0.6055,
+      "aubac_random_p97.5": 0.6253,
+      "aubac_oracle_low_dis": 0.606,
+      "aubac_conf_low_conf": 0.6128,
+      "aubac_contraction": 0.6168,
+      "aubac_3b_only": 0.5198,
+      "aubac_32b_only": 0.7107,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "aubac_random_mean": 0.6263,
+      "aubac_random_p2.5": 0.6135,
+      "aubac_random_p97.5": 0.638,
+      "aubac_oracle_low_dis": 0.6422,
+      "aubac_conf_low_conf": 0.6209,
+      "aubac_contraction": 0.6181,
+      "aubac_3b_only": 0.5066,
+      "aubac_32b_only": 0.7446,
+      "budget_note": "0=all3B (baseline), 1=all32B; AUBAC=mean/21pts"
+    }
+  }
+}

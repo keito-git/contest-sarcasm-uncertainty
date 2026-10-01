@@ -1,11 +1,11 @@
 """
-Task B — Cross-family capacity gradient sweep (E3 extension).
-CONTEST paper cross-family replication: Qwen2.5 specificity critique.
+Cross-family capacity gradient sweep (E3 extension).
+Tests whether the Qwen2.5 capacity results replicate in other model families.
 
 Objective: test whether the asymmetric contraction (ΔAsym) reproduces in families
 other than Qwen2.5. Families: Qwen3 (3 sizes), Gemma-3 (3 sizes), Llama-3.x (4 sizes).
 
-Method (API-based, GPU server SSH unavailable 2026-07-11):
+Method (API-based):
   - OpenRouter API, K=1 sample per item, temperature=0 (deterministic inference)
   - p_yes = Pr(sarcastic/ironic) derived from verbalized confidence:
       "Yes <conf>" → p_yes = conf/100
@@ -455,8 +455,7 @@ def main() -> None:
         "# E3 cross-family — capacity gradient & ΔAsym",
         "",
         "Method: OpenRouter API, K=1 temperature=0, verbalized-confidence p_yes.",
-        "Note: GPU server SSH unavailable 2026-07-11; API inference is equivalent "
-        "for balanced-accuracy analysis.",
+        "Note: API inference is used for the balanced-accuracy analysis.",
         f"Generated: {datetime.now(timezone.utc).isoformat()}",
         "",
     ]
@@ -523,7 +522,7 @@ def main() -> None:
         json.dump(env_log, fenv, indent=2)
 
     print(summary_text, flush=True)
-    print(f"\n[Task B] saved -> {out_md}", flush=True)
+    print(f"\n[xfamily] saved -> {out_md}", flush=True)
 
 
 if __name__ == "__main__":

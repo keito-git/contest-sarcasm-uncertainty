@@ -1,0 +1,165 @@
+{
+  "env": {
+    "utc": "2026-07-05T13:46:49.931058+00:00",
+    "phase": "1",
+    "n_per_dataset": 400,
+    "gpt_model": "gpt-4o-mini",
+    "claude_model": "anthropic/claude-haiku-4.5",
+    "seed": 42,
+    "cost": {
+      "gpt": {
+        "in_tok": 125937,
+        "out_tok": 2391,
+        "usd": 0.0203
+      },
+      "claude": {
+        "in_tok": 136469,
+        "out_tok": 4800,
+        "usd": 0.1605
+      }
+    },
+    "total_usd": 0.1808
+  },
+  "results": [
+    {
+      "dataset": "CSC",
+      "provider": "gpt",
+      "n_ok": 397,
+      "acc": 0.6624685138539043,
+      "err_rate": 0.33753148614609574,
+      "base_rate_pos": 0.2594458438287154,
+      "rho_Uverbal_dis": {
+        "rho": 0.1399057229591571,
+        "ci": [
+          0.03950819677353884,
+          0.23262419336968818
+        ],
+        "n": 397
+      },
+      "ece_verbal": 0.25302267002518897,
+      "brier_verbal": 0.25917506297229215,
+      "rho_Ulogprob_dis": {
+        "rho": 0.09595822842833948,
+        "ci": [
+          0.0002770281300780857,
+          0.18860634500843285
+        ],
+        "n": 397
+      },
+      "ece_logprob": 0.3160984406486863,
+      "brier_logprob": 0.3199988285623759,
+      "low_dis_err": 0.21052631578947367,
+      "low_dis_Uverbal": 0.11992481203007518,
+      "low_dis_n": 133,
+      "mid_dis_err": 0.42857142857142855,
+      "mid_dis_Uverbal": 0.1263157894736842,
+      "mid_dis_n": 133,
+      "high_dis_err": 0.37404580152671757,
+      "high_dis_Uverbal": 0.13358778625954199,
+      "high_dis_n": 131,
+      "epistemic_cluster_frac": 0.08564231738035265,
+      "epistemic_cluster_n": 34,
+      "epistemic_cluster_err": 0.38235294117647056
+    },
+    {
+      "dataset": "CSC",
+      "provider": "claude",
+      "n_ok": 400,
+      "acc": 0.765,
+      "err_rate": 0.235,
+      "base_rate_pos": 0.2625,
+      "rho_Uverbal_dis": {
+        "rho": 0.11523452818396357,
+        "ci": [
+          0.01659499427907437,
+          0.21247536257773442
+        ],
+        "n": 400
+      },
+      "ece_verbal": 0.08575,
+      "brier_verbal": 0.17522149999999997,
+      "low_dis_err": 0.17777777777777778,
+      "low_dis_Uverbal": 0.13414814814814818,
+      "low_dis_n": 135,
+      "mid_dis_err": 0.24812030075187969,
+      "mid_dis_Uverbal": 0.17646616541353383,
+      "mid_dis_n": 133,
+      "high_dis_err": 0.2803030303030303,
+      "high_dis_Uverbal": 0.16000000000000003,
+      "high_dis_n": 132,
+      "epistemic_cluster_frac": 0.0675,
+      "epistemic_cluster_n": 27,
+      "epistemic_cluster_err": 0.48148148148148145
+    },
+    {
+      "dataset": "MultiPICo",
+      "provider": "gpt",
+      "n_ok": 400,
+      "acc": 0.71,
+      "err_rate": 0.29,
+      "base_rate_pos": 0.2925,
+      "rho_Uverbal_dis": {
+        "rho": 0.2033807741276043,
+        "ci": [
+          0.10638872511545691,
+          0.2990354537939834
+        ],
+        "n": 400
+      },
+      "ece_verbal": 0.156125,
+      "brier_verbal": 0.22216874999999994,
+      "rho_Ulogprob_dis": {
+        "rho": 0.19079140605192635,
+        "ci": [
+          0.09127917441934032,
+          0.2912957238911361
+        ],
+        "n": 400
+      },
+      "ece_logprob": 0.2178027806092473,
+      "brier_logprob": 0.2404001431000404,
+      "low_dis_err": 0.18248175182481752,
+      "low_dis_Uverbal": 0.1408759124087591,
+      "low_dis_n": 137,
+      "mid_dis_err": 0.2846153846153846,
+      "mid_dis_Uverbal": 0.14423076923076922,
+      "mid_dis_n": 130,
+      "high_dis_err": 0.40601503759398494,
+      "high_dis_Uverbal": 0.16466165413533837,
+      "high_dis_n": 133,
+      "epistemic_cluster_frac": 0.06,
+      "epistemic_cluster_n": 24,
+      "epistemic_cluster_err": 0.375
+    },
+    {
+      "dataset": "MultiPICo",
+      "provider": "claude",
+      "n_ok": 400,
+      "acc": 0.7525,
+      "err_rate": 0.2475,
+      "base_rate_pos": 0.2925,
+      "rho_Uverbal_dis": {
+        "rho": 0.29975750904860304,
+        "ci": [
+          0.20492728895897888,
+          0.39316514081824244
+        ],
+        "n": 400
+      },
+      "ece_verbal": 0.08642499999999999,
+      "brier_verbal": 0.17966975,
+      "low_dis_err": 0.08759124087591241,
+      "low_dis_Uverbal": 0.16656934306569343,
+      "low_dis_n": 137,
+      "mid_dis_err": 0.2153846153846154,
+      "mid_dis_Uverbal": 0.20015384615384618,
+      "mid_dis_n": 130,
+      "high_dis_err": 0.44360902255639095,
+      "high_dis_Uverbal": 0.21120300751879703,
+      "high_dis_n": 133,
+      "epistemic_cluster_frac": 0.1025,
+      "epistemic_cluster_n": 41,
+      "epistemic_cluster_err": 0.24390243902439024
+    }
+  ]
+}

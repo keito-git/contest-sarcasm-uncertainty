@@ -1,0 +1,7 @@
+# Qwen2.5 capacity sweep and diversity probes (kbs/gpu_sweep).
+# The sweep used Hugging Face transformers with device_map="auto" on a single
+# CUDA GPU; exact library versions were not recorded in the run logs.
+-r requirements.txt
+torch
+transformers
+accelerate

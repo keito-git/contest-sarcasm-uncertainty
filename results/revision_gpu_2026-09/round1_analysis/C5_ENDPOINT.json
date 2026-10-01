@@ -1,0 +1,523 @@
+{
+  "analysis": "C5: Endpoint dependence of ΔAsym",
+  "pairs": [
+    "q0p5b→q32b",
+    "q1p5b→q32b",
+    "q3b→q32b",
+    "q0p5b→q14b"
+  ],
+  "n_bootstrap": 4000,
+  "bootstrap_seed": 42,
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1364,
+          "ci_95": [
+            0.1025,
+            0.1703
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.092,
+          "ci_95": [
+            0.0554,
+            0.1288
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1274,
+          "ci_95": [
+            0.0967,
+            0.157
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.1232,
+          "ci_95": [
+            0.0869,
+            0.1595
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 2458,
+          "slope_balAcc_per_logCap": 0.073644,
+          "bacc_by_size": {
+            "q0p5b": 0.5403,
+            "q1p5b": 0.6053,
+            "q3b": 0.5607,
+            "q7b": 0.6624,
+            "q14b": 0.7714,
+            "q32b": 0.771
+          }
+        },
+        "high": {
+          "n_tercile": 2355,
+          "slope_balAcc_per_logCap": 0.030747,
+          "bacc_by_size": {
+            "q0p5b": 0.5361,
+            "q1p5b": 0.5566,
+            "q3b": 0.5474,
+            "q7b": 0.5548,
+            "q14b": 0.6439,
+            "q32b": 0.6303
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.042897,
+          "ci_95": [
+            0.033428,
+            0.052139
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    },
+    "EPIC": {
+      "n": 2999,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.3134,
+          "ci_95": [
+            0.2402,
+            0.3836
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1452,
+          "ci_95": [
+            0.0754,
+            0.2156
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.2017,
+          "ci_95": [
+            0.1379,
+            0.2651
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.2453,
+          "ci_95": [
+            0.1723,
+            0.318
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 1000,
+          "slope_balAcc_per_logCap": 0.116016,
+          "bacc_by_size": {
+            "q0p5b": 0.3588,
+            "q1p5b": 0.5709,
+            "q3b": 0.5177,
+            "q7b": 0.6103,
+            "q14b": 0.7104,
+            "q32b": 0.7988
+          }
+        },
+        "high": {
+          "n_tercile": 974,
+          "slope_balAcc_per_logCap": 0.03614,
+          "bacc_by_size": {
+            "q0p5b": 0.4552,
+            "q1p5b": 0.4989,
+            "q3b": 0.5023,
+            "q7b": 0.5331,
+            "q14b": 0.5615,
+            "q32b": 0.5818
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.079876,
+          "ci_95": [
+            0.060303,
+            0.099146
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.3134,
+          "ci_95": [
+            0.2562,
+            0.3698
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.2057,
+          "ci_95": [
+            0.1541,
+            0.2545
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.2085,
+          "ci_95": [
+            0.1596,
+            0.2558
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.2341,
+          "ci_95": [
+            0.1785,
+            0.2904
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 1550,
+          "slope_balAcc_per_logCap": 0.10661,
+          "bacc_by_size": {
+            "q0p5b": 0.404,
+            "q1p5b": 0.546,
+            "q3b": 0.5262,
+            "q7b": 0.576,
+            "q14b": 0.7104,
+            "q32b": 0.799
+          }
+        },
+        "high": {
+          "n_tercile": 1539,
+          "slope_balAcc_per_logCap": 0.022436,
+          "bacc_by_size": {
+            "q0p5b": 0.4843,
+            "q1p5b": 0.5186,
+            "q3b": 0.5016,
+            "q7b": 0.5108,
+            "q14b": 0.5566,
+            "q32b": 0.5659
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.084174,
+          "ci_95": [
+            0.069938,
+            0.098549
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.2184,
+          "ci_95": [
+            0.1477,
+            0.2871
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.163,
+          "ci_95": [
+            0.1,
+            0.2249
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1689,
+          "ci_95": [
+            0.1122,
+            0.2219
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.2072,
+          "ci_95": [
+            0.1343,
+            0.277
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 940,
+          "slope_balAcc_per_logCap": 0.103143,
+          "bacc_by_size": {
+            "q0p5b": 0.4755,
+            "q1p5b": 0.5286,
+            "q3b": 0.5335,
+            "q7b": 0.6019,
+            "q14b": 0.7755,
+            "q32b": 0.8082
+          }
+        },
+        "high": {
+          "n_tercile": 873,
+          "slope_balAcc_per_logCap": 0.035813,
+          "bacc_by_size": {
+            "q0p5b": 0.4929,
+            "q1p5b": 0.4907,
+            "q3b": 0.5014,
+            "q7b": 0.5136,
+            "q14b": 0.5857,
+            "q32b": 0.6072
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.06733,
+          "ci_95": [
+            0.0486,
+            0.085325
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.3146,
+          "ci_95": [
+            0.2245,
+            0.4004
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1808,
+          "ci_95": [
+            0.0993,
+            0.2608
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1934,
+          "ci_95": [
+            0.1178,
+            0.2648
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.2501,
+          "ci_95": [
+            0.158,
+            0.3374
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 736,
+          "slope_balAcc_per_logCap": 0.112995,
+          "bacc_by_size": {
+            "q0p5b": 0.4009,
+            "q1p5b": 0.5535,
+            "q3b": 0.5257,
+            "q7b": 0.5607,
+            "q14b": 0.7347,
+            "q32b": 0.8198
+          }
+        },
+        "high": {
+          "n_tercile": 517,
+          "slope_balAcc_per_logCap": 0.029987,
+          "bacc_by_size": {
+            "q0p5b": 0.5004,
+            "q1p5b": 0.5193,
+            "q3b": 0.5041,
+            "q7b": 0.5103,
+            "q14b": 0.5842,
+            "q32b": 0.6048
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.083008,
+          "ci_95": [
+            0.060241,
+            0.106388
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "pair_dasym": {
+        "q0p5b→q32b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.2174,
+          "ci_95": [
+            0.1118,
+            0.3249
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q1p5b→q32b": {
+          "sm_cap_B": 1.5,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.1838,
+          "ci_95": [
+            0.0903,
+            0.2801
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q3b→q32b": {
+          "sm_cap_B": 3.0,
+          "lg_cap_B": 32.0,
+          "asym_acc": 0.246,
+          "ci_95": [
+            0.1656,
+            0.3265
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000
+        },
+        "q0p5b→q14b": {
+          "sm_cap_B": 0.5,
+          "lg_cap_B": 14.0,
+          "asym_acc": 0.177,
+          "ci_95": [
+            0.067,
+            0.2847
+          ],
+          "p_boot_raw": 0.001,
+          "n_bootstrap": 4000
+        }
+      },
+      "slope_based": {
+        "low": {
+          "n_tercile": 458,
+          "slope_balAcc_per_logCap": 0.112323,
+          "bacc_by_size": {
+            "q0p5b": 0.4467,
+            "q1p5b": 0.5375,
+            "q3b": 0.4971,
+            "q7b": 0.5851,
+            "q14b": 0.7496,
+            "q32b": 0.838
+          }
+        },
+        "high": {
+          "n_tercile": 305,
+          "slope_balAcc_per_logCap": 0.045873,
+          "bacc_by_size": {
+            "q0p5b": 0.4398,
+            "q1p5b": 0.4971,
+            "q3b": 0.5188,
+            "q7b": 0.5242,
+            "q14b": 0.5657,
+            "q32b": 0.6137
+          }
+        },
+        "diff_low_minus_high": {
+          "value": 0.06645,
+          "ci_95": [
+            0.036451,
+            0.096301
+          ],
+          "p_boot_raw": 0.0,
+          "n_bootstrap": 4000,
+          "interpretation": "slope(low_dis) > slope(high_dis) → capacity matters more for epistemic items"
+        }
+      }
+    }
+  }
+}

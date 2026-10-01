@@ -12,7 +12,7 @@ Providers / uncertainty signals:
     Anthropic exposes NO logprobs, so GPT is the quantitative-calibration arm.
   - Claude via OpenRouter  : verbalized confidence only (contrast arm).
 
-Human disagreement is MEAN-INDEPENDENT (Asai gate, learned from pilot confound):
+Human disagreement is MEAN-INDEPENDENT (chosen after a pilot showed a mean confound):
   - CSC       : rel_var = Var / ((mean-1)(6-mean))   [1..6 rating scale]
   - MultiPICo : normalized entropy of p_ironic (already in `disagreement` col)
 

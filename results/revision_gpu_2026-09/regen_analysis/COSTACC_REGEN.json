@@ -1,0 +1,165 @@
+{
+  "script": "run_costacc_regen.py",
+  "metric": "AUBAC: area under budget-accuracy curve (budget axis 0\u21921); delta = AUBAC(contraction) - AUBAC(random_baseline)",
+  "n_bootstrap": 5000,
+  "rng_seed": 42,
+  "budgets": [
+    0.0,
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.30000000000000004,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6000000000000001,
+    0.65,
+    0.7000000000000001,
+    0.75,
+    0.8,
+    0.8500000000000001,
+    0.9,
+    0.9500000000000001,
+    1.0
+  ],
+  "corpora": [
+    "CSC",
+    "EPIC",
+    "MultiPICo_es",
+    "MultiPICo_de",
+    "MultiPICo_fr",
+    "MultiPICo_it"
+  ],
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "aubac_contraction": 0.6337,
+      "aubac_conf3": 0.6328,
+      "aubac_random": 0.6265,
+      "delta_cont_minus_random": 0.0072,
+      "delta_CI_95_low": 0.0003,
+      "delta_CI_95_high": 0.0169,
+      "significant_positive_at_05": true,
+      "balacc_3B_alone": 0.5553,
+      "balacc_32B_alone": 0.6953,
+      "static_balacc": {
+        "q0p5b": 0.5413,
+        "q1p5b": 0.5733,
+        "q3b": 0.5553,
+        "q7b": 0.6043,
+        "q14b": 0.6981,
+        "q32b": 0.6953
+      }
+    },
+    "EPIC": {
+      "n": 2999,
+      "aubac_contraction": 0.5773,
+      "aubac_conf3": 0.5989,
+      "aubac_random": 0.5917,
+      "delta_cont_minus_random": -0.0143,
+      "delta_CI_95_low": -0.0282,
+      "delta_CI_95_high": -0.008,
+      "significant_positive_at_05": false,
+      "balacc_3B_alone": 0.5061,
+      "balacc_32B_alone": 0.6842,
+      "static_balacc": {
+        "q0p5b": 0.4331,
+        "q1p5b": 0.5299,
+        "q3b": 0.5061,
+        "q7b": 0.5608,
+        "q14b": 0.6317,
+        "q32b": 0.6842
+      }
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "aubac_contraction": 0.5879,
+      "aubac_conf3": 0.6012,
+      "aubac_random": 0.6024,
+      "delta_cont_minus_random": -0.0145,
+      "delta_CI_95_low": -0.0188,
+      "delta_CI_95_high": -0.0029,
+      "significant_positive_at_05": false,
+      "balacc_3B_alone": 0.5152,
+      "balacc_32B_alone": 0.6835,
+      "static_balacc": {
+        "q0p5b": 0.4636,
+        "q1p5b": 0.5339,
+        "q3b": 0.5152,
+        "q7b": 0.5395,
+        "q14b": 0.6424,
+        "q32b": 0.6835
+      }
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "aubac_contraction": 0.6098,
+      "aubac_conf3": 0.6208,
+      "aubac_random": 0.6189,
+      "delta_cont_minus_random": -0.009,
+      "delta_CI_95_low": -0.0174,
+      "delta_CI_95_high": 0.0068,
+      "significant_positive_at_05": false,
+      "balacc_3B_alone": 0.5121,
+      "balacc_32B_alone": 0.7178,
+      "static_balacc": {
+        "q0p5b": 0.4815,
+        "q1p5b": 0.5052,
+        "q3b": 0.5121,
+        "q7b": 0.5469,
+        "q14b": 0.6615,
+        "q32b": 0.7178
+      }
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "aubac_contraction": 0.6169,
+      "aubac_conf3": 0.6136,
+      "aubac_random": 0.6152,
+      "delta_cont_minus_random": 0.0017,
+      "delta_CI_95_low": -0.0146,
+      "delta_CI_95_high": 0.0155,
+      "significant_positive_at_05": false,
+      "balacc_3B_alone": 0.5198,
+      "balacc_32B_alone": 0.7107,
+      "static_balacc": {
+        "q0p5b": 0.4413,
+        "q1p5b": 0.5344,
+        "q3b": 0.5198,
+        "q7b": 0.549,
+        "q14b": 0.6651,
+        "q32b": 0.7107
+      }
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "aubac_contraction": 0.6177,
+      "aubac_conf3": 0.6206,
+      "aubac_random": 0.6086,
+      "delta_cont_minus_random": 0.0091,
+      "delta_CI_95_low": -0.0279,
+      "delta_CI_95_high": 0.012,
+      "significant_positive_at_05": false,
+      "balacc_3B_alone": 0.5066,
+      "balacc_32B_alone": 0.7446,
+      "static_balacc": {
+        "q0p5b": 0.4438,
+        "q1p5b": 0.5113,
+        "q3b": 0.5066,
+        "q7b": 0.5444,
+        "q14b": 0.6726,
+        "q32b": 0.7446
+      }
+    }
+  },
+  "summary": {
+    "significant_positive_corpora": [
+      "CSC"
+    ],
+    "any_significant_positive": true
+  }
+}

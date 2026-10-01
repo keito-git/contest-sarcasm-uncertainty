@@ -1,0 +1,104 @@
+{
+  "analysis": "C3: Actual annotator counts for MultiPICo es/de/fr/it from HF parquet",
+  "source": "multipico_hf_raw.parquet (Multilingual-Perspectivist-NLU/MultiPICo)",
+  "numbers_tex_path": "<manuscript>/numbers.tex",
+  "ki_macros_in_paper": {
+    "kiMPMin": 2.0,
+    "kiMPMax": 8.0,
+    "kiMPMed": 2.0,
+    "kiMPMeanSE": 0.072
+  },
+  "per_lang": {
+    "es": {
+      "ki_min": 3,
+      "ki_max": 14,
+      "ki_median": 5.0,
+      "ki_mean": 5.1339,
+      "ki_std": 1.1171,
+      "ki_value_counts": {
+        "3": 100,
+        "4": 838,
+        "5": 2925,
+        "6": 386,
+        "7": 185,
+        "8": 136,
+        "9": 71,
+        "10": 27,
+        "11": 11,
+        "12": 1,
+        "14": 1
+      },
+      "frac_k_ge4": 0.9786,
+      "frac_k_ge5": 0.7996,
+      "n_items": 4681,
+      "source": "parquet_exact"
+    },
+    "de": {
+      "ki_min": 3,
+      "ki_max": 16,
+      "ki_median": 5.0,
+      "ki_mean": 5.2743,
+      "ki_std": 1.7473,
+      "ki_value_counts": {
+        "3": 118,
+        "4": 570,
+        "5": 1219,
+        "6": 137,
+        "7": 67,
+        "8": 69,
+        "9": 76,
+        "10": 53,
+        "11": 33,
+        "12": 20,
+        "13": 3,
+        "14": 4,
+        "16": 1
+      },
+      "frac_k_ge4": 0.9502,
+      "frac_k_ge5": 0.7097,
+      "n_items": 2370,
+      "source": "parquet_exact"
+    },
+    "fr": {
+      "ki_min": 3,
+      "ki_max": 7,
+      "ki_median": 5.0,
+      "ki_mean": 4.983,
+      "ki_std": 0.418,
+      "ki_value_counts": {
+        "3": 12,
+        "4": 132,
+        "5": 1491,
+        "6": 124,
+        "7": 1
+      },
+      "frac_k_ge4": 0.9932,
+      "frac_k_ge5": 0.9182,
+      "n_items": 1760,
+      "source": "parquet_exact"
+    },
+    "it": {
+      "ki_min": 3,
+      "ki_max": 6,
+      "ki_median": 5.0,
+      "ki_mean": 4.7956,
+      "ki_std": 0.4886,
+      "ki_value_counts": {
+        "3": 14,
+        "4": 200,
+        "5": 760,
+        "6": 24
+      },
+      "frac_k_ge4": 0.986,
+      "frac_k_ge5": 0.7856,
+      "n_items": 998,
+      "source": "parquet_exact"
+    }
+  },
+  "corrections_needed": [
+    "kiMPMed: paper has 2.0, actual aggregate median = 5.0",
+    "kiMPMin: paper has 2, actual min = 3",
+    "kiMPMax: paper has 8, actual max = 16"
+  ],
+  "note": "k_i computed from parquet by grouping per-annotation records by reply_id and language; matched to full_input by item_id (format: mp_{lang}_{reply_id})"
+}

@@ -1,0 +1,157 @@
+{
+  "env": {
+    "utc": "2026-09-25T00:42:36.273213+00:00",
+    "hostname": "<redacted>",
+    "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023,",
+    "script": "run_corrections.py"
+  },
+  "rc6_logprob_fixed": {
+    "signal_metrics": [
+      {
+        "corpus": "CSC",
+        "provider": "gpt",
+        "signal": "U_logprob_corrected",
+        "formula": "u_lp = 1 - |2*p_yes_lp - 1|  (p_yes_lp is yes/no-normalized)",
+        "n": 397,
+        "raw_spearman": {
+          "rho": 0.09595822842833948,
+          "p": 0.05608999215949502,
+          "ci_95": [
+            -0.0018584970739781445,
+            0.18506739958162025
+          ],
+          "n": 397
+        },
+        "partial_spearman_ctrl_ki": {
+          "rho": 0.09566664052351859,
+          "p": 0.056844570086555773,
+          "n": 397
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.5560289612921192,
+        "mutual_information": {
+          "mi_bc": 0.009273804707333605,
+          "p_perm": 0.292,
+          "n": 397
+        },
+        "isotonic_r2": 0.03401203696859956,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.19457947846640042,
+            "p": 0.007783810829836558,
+            "ci_95": [
+              0.04706022530446983,
+              0.32811505413332365
+            ],
+            "n": 186
+          },
+          "1": {
+            "rho": 0.07724774227270963,
+            "p": 0.2639546983539611,
+            "ci_95": [
+              -0.05793524184370338,
+              0.20892757638556564
+            ],
+            "n": 211
+          }
+        }
+      },
+      {
+        "corpus": "MultiPICo",
+        "provider": "gpt",
+        "signal": "U_logprob_corrected",
+        "formula": "u_lp = 1 - |2*p_yes_lp - 1|  (p_yes_lp is yes/no-normalized)",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.19079140605192635,
+          "p": 0.0001234306565090336,
+          "ci_95": [
+            0.08361651052721189,
+            0.28285377763227115
+          ],
+          "n": 400
+        },
+        "partial_spearman_ctrl_ki": {
+          "rho": 0.19286643338203285,
+          "p": 0.00010370219786493714,
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6283409253059657,
+        "mutual_information": {
+          "mi_bc": 0.011392745201923099,
+          "p_perm": 0.142,
+          "n": 400
+        },
+        "isotonic_r2": 0.06982245205817517,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.28456545246726606,
+            "p": 7.860482369178605e-06,
+            "ci_95": [
+              0.15655119140832116,
+              0.4192863976141798
+            ],
+            "n": 239
+          },
+          "1": {
+            "rho": 0.07234377657406144,
+            "p": 0.3617777515177004,
+            "ci_95": [
+              -0.07811260262463912,
+              0.2259935890103333
+            ],
+            "n": 161
+          }
+        }
+      },
+      {
+        "corpus": "EPIC",
+        "provider": "gpt",
+        "signal": "U_logprob_corrected",
+        "formula": "u_lp = 1 - |2*p_yes_lp - 1|  (p_yes_lp is yes/no-normalized)",
+        "n": 400,
+        "raw_spearman": {
+          "rho": 0.16498588556187638,
+          "p": 0.0009259286925142251,
+          "ci_95": [
+            0.06567096245658804,
+            0.2497000069618633
+          ],
+          "n": 400
+        },
+        "partial_spearman_ctrl_ki": {
+          "rho": 0.16507651808776166,
+          "p": 0.0009198411980512162,
+          "n": 400
+        },
+        "auroc_signal_for_high_vs_low_dis_tercile": 0.6035342532074558,
+        "mutual_information": {
+          "mi_bc": 0.014548448574889503,
+          "p_perm": 0.106,
+          "n": 400
+        },
+        "isotonic_r2": 0.06935397947343669,
+        "class_conditional_spearman": {
+          "0": {
+            "rho": 0.25828259073080756,
+            "p": 4.1287223725651475e-05,
+            "ci_95": [
+              0.13604541706668988,
+              0.3676656113183648
+            ],
+            "n": 246
+          },
+          "1": {
+            "rho": -0.031108150859337866,
+            "p": 0.7017275516396464,
+            "ci_95": [
+              -0.18869947151752078,
+              0.125917570237555
+            ],
+            "n": 154
+          }
+        }
+      }
+    ],
+    "note": "p_yes_lp in E1 parquet is already yes/no-normalized (p_Yes/(p_Yes+p_No)), confirmed from experiments/run_e1.py. Correct signal: u_lp = 1 - |2*p_yes_lp - 1| = 2*min(p,1-p). An earlier computation using 1-p_yes_lp gave AUROC 0.30-0.42 (wrong direction). This file has the corrected values."
+  }
+}

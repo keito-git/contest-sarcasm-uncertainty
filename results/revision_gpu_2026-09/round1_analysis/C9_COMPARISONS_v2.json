@@ -1,0 +1,126 @@
+{
+  "analysis": "C9 corrected: sign-flipped grouping-loss-style AUROC",
+  "correction_note": "v1 reported AUROC 0.25-0.37 for c9iii (< 0.5 = inversely oriented). v2 reports AUROC of sign-flipped score = 1 - original_AUROC.",
+  "per_corpus": {
+    "CSC": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.2532,
+        "original_ci_95": [
+          0.2322,
+          0.2739
+        ],
+        "auroc_sign_flipped": 0.7468,
+        "ci_95_sign_flipped": [
+          0.7261,
+          0.7678
+        ],
+        "interpretation": "Original AUROC=0.2532 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.7468: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.4132,
+      "c9i_qwen_variance_AUROC": 0.6085,
+      "c9i_diversity_variance_AUROC": 0.504,
+      "c9ii_calibrated_conf_AUROC": 0.47
+    },
+    "EPIC": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.3052,
+        "original_ci_95": [
+          0.2759,
+          0.3355
+        ],
+        "auroc_sign_flipped": 0.6948,
+        "ci_95_sign_flipped": [
+          0.6645,
+          0.7241
+        ],
+        "interpretation": "Original AUROC=0.3052 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.6948: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.6632,
+      "c9i_qwen_variance_AUROC": 0.5959,
+      "c9i_diversity_variance_AUROC": 0.474,
+      "c9ii_calibrated_conf_AUROC": 0.6476
+    },
+    "MultiPICo_es": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.3408,
+        "original_ci_95": [
+          0.3151,
+          0.3659
+        ],
+        "auroc_sign_flipped": 0.6592,
+        "ci_95_sign_flipped": [
+          0.6341,
+          0.6849
+        ],
+        "interpretation": "Original AUROC=0.3408 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.6592: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.6393,
+      "c9i_qwen_variance_AUROC": 0.4899,
+      "c9i_diversity_variance_AUROC": 0.4542,
+      "c9ii_calibrated_conf_AUROC": 0.6223
+    },
+    "MultiPICo_de": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.3714,
+        "original_ci_95": [
+          0.3368,
+          0.4085
+        ],
+        "auroc_sign_flipped": 0.6286,
+        "ci_95_sign_flipped": [
+          0.5915,
+          0.6632
+        ],
+        "interpretation": "Original AUROC=0.3714 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.6286: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.5925,
+      "c9i_qwen_variance_AUROC": 0.5435,
+      "c9i_diversity_variance_AUROC": 0.4765,
+      "c9ii_calibrated_conf_AUROC": 0.5578
+    },
+    "MultiPICo_fr": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.3536,
+        "original_ci_95": [
+          0.318,
+          0.3917
+        ],
+        "auroc_sign_flipped": 0.6464,
+        "ci_95_sign_flipped": [
+          0.6083,
+          0.682
+        ],
+        "interpretation": "Original AUROC=0.3536 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.6464: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.6072,
+      "c9i_qwen_variance_AUROC": 0.4389,
+      "c9i_diversity_variance_AUROC": 0.4398,
+      "c9ii_calibrated_conf_AUROC": 0.5375
+    },
+    "MultiPICo_it": {
+      "c9iii_grouping_loss_style_corrected": {
+        "orientation": "INVERSELY ORIENTED: AUROC < 0.5 means higher score → less likely fixed",
+        "original_AUROC": 0.313,
+        "original_ci_95": [
+          0.2616,
+          0.3656
+        ],
+        "auroc_sign_flipped": 0.687,
+        "ci_95_sign_flipped": [
+          0.6344,
+          0.7384
+        ],
+        "interpretation": "Original AUROC=0.313 < 0.5: grouping-loss score is INVERSELY oriented. Sign-flipped AUROC=0.687: using -score predicts fix event correctly."
+      },
+      "primary_probe_AUROC": 0.5845,
+      "c9i_qwen_variance_AUROC": 0.4954,
+      "c9i_diversity_variance_AUROC": 0.5015,
+      "c9ii_calibrated_conf_AUROC": 0.5348
+    }
+  }
+}

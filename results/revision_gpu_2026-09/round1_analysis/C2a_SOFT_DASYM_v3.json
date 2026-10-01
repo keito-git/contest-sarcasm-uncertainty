@@ -1,0 +1,290 @@
+{
+  "analysis": "C2a soft-label ΔAsym (v3): correct drop_low − drop_high formula",
+  "formula": "ΔAsym_Brier = [mean_Brier(0.5B, low) − mean_Brier(32B, low)] − [mean_Brier(0.5B, high) − mean_Brier(32B, high)]",
+  "v2_bug": "v2 computed Brier_low(0.5B) − Brier_high(0.5B) (no 32B term). Matches correct formula only when Brier(32B, low) ≈ Brier(32B, high).",
+  "bootstrap_n": 4000,
+  "bootstrap_seed": 42,
+  "p_human_note": {
+    "CSC": "p_binary = fraction(sarcasm_score_by_evaluator >= 4); consistent with C2_SOFTLABEL_v2.json",
+    "EPIC": "p_ironic from epic_aggregated.parquet",
+    "MultiPICo_*": "mean binary label from multipico_hf_raw.parquet, key=mp_{lang}_{reply_id}"
+  },
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 2458,
+          "brier_0p5b": 0.1989,
+          "brier_32b": 0.2433,
+          "jsd_0p5b": 0.1587,
+          "jsd_32b": 0.1748
+        },
+        "mid": {
+          "n": 2223,
+          "brier_0p5b": 0.1354,
+          "brier_32b": 0.2796,
+          "jsd_0p5b": 0.1005,
+          "jsd_32b": 0.2088
+        },
+        "high": {
+          "n": 2355,
+          "brier_0p5b": 0.098,
+          "brier_32b": 0.2435,
+          "jsd_0p5b": 0.0638,
+          "jsd_32b": 0.1946
+        }
+      },
+      "brier": {
+        "drop_low": -0.0444,
+        "drop_high": -0.1455,
+        "dasym": 0.1011,
+        "ci_95": [
+          0.0794,
+          0.1226
+        ]
+      },
+      "jsd": {
+        "drop_low": -0.016,
+        "drop_high": -0.1308,
+        "dasym": 0.1148,
+        "ci_95": [
+          0.1006,
+          0.1289
+        ]
+      }
+    },
+    "EPIC": {
+      "n": 2999,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 1000,
+          "brier_0p5b": 0.3005,
+          "brier_32b": 0.1044,
+          "jsd_0p5b": 0.233,
+          "jsd_32b": 0.0741
+        },
+        "mid": {
+          "n": 1025,
+          "brier_0p5b": 0.1354,
+          "brier_32b": 0.1629,
+          "jsd_0p5b": 0.0785,
+          "jsd_32b": 0.1403
+        },
+        "high": {
+          "n": 974,
+          "brier_0p5b": 0.0798,
+          "brier_32b": 0.2083,
+          "jsd_0p5b": 0.0499,
+          "jsd_32b": 0.1764
+        }
+      },
+      "brier": {
+        "drop_low": 0.196,
+        "drop_high": -0.1286,
+        "dasym": 0.3246,
+        "ci_95": [
+          0.2995,
+          0.3489
+        ]
+      },
+      "jsd": {
+        "drop_low": 0.1589,
+        "drop_high": -0.1265,
+        "dasym": 0.2854,
+        "ci_95": [
+          0.2689,
+          0.3017
+        ]
+      },
+      "v2_discrepancy": "v2 stored 0.2207; correct (drop_low − drop_high) = 0.3246. Bug in analyze_round1_v2.py: `brier_diff_0p5b` computed Brier_low(0.5B) − Brier_high(0.5B) only, ignoring 32B entirely. For CSC the two formulas coincide because 32B Brier is similar across terciles (upgrade helps all terciles similarly). For EPIC they diverge because 32B degrades on high-dis items: high-dis EPIC irony is highly aleatoric, so 32B becomes more confident and more wrong → Brier_high(32B) > Brier_high(0.5B), making drop_high negative and the correct ΔAsym much larger (0.3246 vs stored 0.2207)."
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 1550,
+          "brier_0p5b": 0.3635,
+          "brier_32b": 0.1103,
+          "jsd_0p5b": 0.2719,
+          "jsd_32b": 0.0788
+        },
+        "mid": {
+          "n": 1592,
+          "brier_0p5b": 0.1579,
+          "brier_32b": 0.1558,
+          "jsd_0p5b": 0.09,
+          "jsd_32b": 0.134
+        },
+        "high": {
+          "n": 1539,
+          "brier_0p5b": 0.0694,
+          "brier_32b": 0.2066,
+          "jsd_0p5b": 0.0424,
+          "jsd_32b": 0.1748
+        }
+      },
+      "brier": {
+        "drop_low": 0.2532,
+        "drop_high": -0.1373,
+        "dasym": 0.3904,
+        "ci_95": [
+          0.3694,
+          0.4113
+        ]
+      },
+      "jsd": {
+        "drop_low": 0.1931,
+        "drop_high": -0.1324,
+        "dasym": 0.3256,
+        "ci_95": [
+          0.3115,
+          0.3393
+        ]
+      }
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 940,
+          "brier_0p5b": 0.2817,
+          "brier_32b": 0.1371,
+          "jsd_0p5b": 0.2237,
+          "jsd_32b": 0.0974
+        },
+        "mid": {
+          "n": 557,
+          "brier_0p5b": 0.1504,
+          "brier_32b": 0.1644,
+          "jsd_0p5b": 0.086,
+          "jsd_32b": 0.1353
+        },
+        "high": {
+          "n": 873,
+          "brier_0p5b": 0.0747,
+          "brier_32b": 0.2086,
+          "jsd_0p5b": 0.0436,
+          "jsd_32b": 0.1744
+        }
+      },
+      "brier": {
+        "drop_low": 0.1446,
+        "drop_high": -0.1339,
+        "dasym": 0.2784,
+        "ci_95": [
+          0.2499,
+          0.3063
+        ]
+      },
+      "jsd": {
+        "drop_low": 0.1264,
+        "drop_high": -0.1308,
+        "dasym": 0.2571,
+        "ci_95": [
+          0.2387,
+          0.2752
+        ]
+      }
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 736,
+          "brier_0p5b": 0.3924,
+          "brier_32b": 0.1281,
+          "jsd_0p5b": 0.2905,
+          "jsd_32b": 0.0902
+        },
+        "mid": {
+          "n": 507,
+          "brier_0p5b": 0.1958,
+          "brier_32b": 0.1881,
+          "jsd_0p5b": 0.113,
+          "jsd_32b": 0.1507
+        },
+        "high": {
+          "n": 517,
+          "brier_0p5b": 0.0747,
+          "brier_32b": 0.2089,
+          "jsd_0p5b": 0.0455,
+          "jsd_32b": 0.1773
+        }
+      },
+      "brier": {
+        "drop_low": 0.2643,
+        "drop_high": -0.1342,
+        "dasym": 0.3985,
+        "ci_95": [
+          0.3642,
+          0.4321
+        ]
+      },
+      "jsd": {
+        "drop_low": 0.2002,
+        "drop_high": -0.1319,
+        "dasym": 0.3321,
+        "ci_95": [
+          0.3097,
+          0.3544
+        ]
+      }
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "formula": "ΔAsym = drop_low − drop_high; drop_t = mean_metric(0.5B,t) − mean_metric(32B,t)",
+      "tercile_scores": {
+        "low": {
+          "n": 458,
+          "brier_0p5b": 0.3313,
+          "brier_32b": 0.1129,
+          "jsd_0p5b": 0.2534,
+          "jsd_32b": 0.0799
+        },
+        "mid": {
+          "n": 235,
+          "brier_0p5b": 0.1524,
+          "brier_32b": 0.1544,
+          "jsd_0p5b": 0.0866,
+          "jsd_32b": 0.1316
+        },
+        "high": {
+          "n": 305,
+          "brier_0p5b": 0.0784,
+          "brier_32b": 0.1998,
+          "jsd_0p5b": 0.0462,
+          "jsd_32b": 0.1684
+        }
+      },
+      "brier": {
+        "drop_low": 0.2184,
+        "drop_high": -0.1214,
+        "dasym": 0.3398,
+        "ci_95": [
+          0.3001,
+          0.3793
+        ]
+      },
+      "jsd": {
+        "drop_low": 0.1734,
+        "drop_high": -0.1222,
+        "dasym": 0.2956,
+        "ci_95": [
+          0.2694,
+          0.3213
+        ]
+      }
+    }
+  },
+  "env": {
+    "hostname": "<redacted>",
+    "utc": "2026-09-27T05:19:47.425215+00:00",
+    "script": "kbs/analysis/compute_c2a_dasym_v3.py"
+  }
+}

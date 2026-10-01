@@ -1,0 +1,41 @@
+{
+  "analysis": "C8 corrected: ρ(dis_mi, HUMAN mean rating) for CSC",
+  "correction_note": "v1 computed ρ(dis_mi, mean_p_yes across Qwen models). v2 corrects to ρ(dis_mi, mean_human_likert_rating) for CSC. For binary corpora (EPIC, MultiPICo): dis_mi IS binary_entropy(p_human), so the dependency is deterministic; stated explicitly.",
+  "n_bootstrap": 4000,
+  "bootstrap_seed": 42,
+  "per_corpus": {
+    "CSC": {
+      "n": 7036,
+      "rho": 0.2442,
+      "ci_95": [
+        0.2189,
+        0.2692
+      ],
+      "p_value_parametric": 0.0,
+      "n_bootstrap": 4000,
+      "estimand": "ρ(dis_mi, mean_human_likert_rating)",
+      "human_rating_source": "csc_data_full.csv sarcasm_score_by_evaluator (1-6 scale)",
+      "reference_0.244": "Computed ρ=0.2442. The reference value 0.244 may differ if computed against a different human metric (e.g., variance rather than mean). Result REPRODUCED (diff=0.0002)."
+    },
+    "EPIC": {
+      "n": 2999,
+      "deterministic_relationship": "dis_mi = binary_entropy(p_human) for binary irony corpora. dis_mi is a DETERMINISTIC function of the human ironic proportion. Spearman ρ(dis_mi, p_human) is guaranteed ≥ 0 but not trivially 1.0 since binary_entropy is non-monotone (peaks at p=0.5). No separate Spearman computation is meaningful; the dependency is exact."
+    },
+    "MultiPICo_es": {
+      "n": 4681,
+      "deterministic_relationship": "dis_mi = binary_entropy(p_human) for binary irony corpora. dis_mi is a DETERMINISTIC function of the human ironic proportion. Spearman ρ(dis_mi, p_human) is guaranteed ≥ 0 but not trivially 1.0 since binary_entropy is non-monotone (peaks at p=0.5). No separate Spearman computation is meaningful; the dependency is exact."
+    },
+    "MultiPICo_de": {
+      "n": 2370,
+      "deterministic_relationship": "dis_mi = binary_entropy(p_human) for binary irony corpora. dis_mi is a DETERMINISTIC function of the human ironic proportion. Spearman ρ(dis_mi, p_human) is guaranteed ≥ 0 but not trivially 1.0 since binary_entropy is non-monotone (peaks at p=0.5). No separate Spearman computation is meaningful; the dependency is exact."
+    },
+    "MultiPICo_fr": {
+      "n": 1760,
+      "deterministic_relationship": "dis_mi = binary_entropy(p_human) for binary irony corpora. dis_mi is a DETERMINISTIC function of the human ironic proportion. Spearman ρ(dis_mi, p_human) is guaranteed ≥ 0 but not trivially 1.0 since binary_entropy is non-monotone (peaks at p=0.5). No separate Spearman computation is meaningful; the dependency is exact."
+    },
+    "MultiPICo_it": {
+      "n": 998,
+      "deterministic_relationship": "dis_mi = binary_entropy(p_human) for binary irony corpora. dis_mi is a DETERMINISTIC function of the human ironic proportion. Spearman ρ(dis_mi, p_human) is guaranteed ≥ 0 but not trivially 1.0 since binary_entropy is non-monotone (peaks at p=0.5). No separate Spearman computation is meaningful; the dependency is exact."
+    }
+  }
+}
