@@ -39,3 +39,5 @@ figures/
 .DS_Store
 *.DS_Store
 .ipynb_checkpoints/
+python/revision_r1/numbers_r1.tex
+results/revision_r1_2026-11/figures/

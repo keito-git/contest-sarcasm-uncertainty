@@ -1,0 +1,913 @@
+{
+ "meta": {
+  "utc": "2026-11-25T18:36:00.979524+00:00",
+  "B": 4000,
+  "seed": 42
+ },
+ "seeds": {
+  "CSC": {
+   "42": {
+    "n": 7036,
+    "dasym": 0.1364,
+    "probe_all_auroc": 0.5812
+   },
+   "101": {
+    "n": 7036,
+    "dasym": 0.1374,
+    "probe_all_auroc": 0.5891
+   },
+   "202": {
+    "n": 7036,
+    "dasym": 0.1265,
+    "probe_all_auroc": 0.5813
+   },
+   "mean": 0.1334,
+   "sd": 0.006
+  },
+  "EPIC": {
+   "42": {
+    "n": 2999,
+    "dasym": 0.3134,
+    "probe_all_auroc": 0.7033
+   },
+   "101": {
+    "n": 2999,
+    "dasym": 0.3122,
+    "probe_all_auroc": 0.7155
+   },
+   "202": {
+    "n": 2999,
+    "dasym": 0.3091,
+    "probe_all_auroc": 0.6904
+   },
+   "mean": 0.3116,
+   "sd": 0.0022
+  },
+  "MultiPICo_es": {
+   "42": {
+    "n": 4681,
+    "dasym": 0.3134,
+    "probe_all_auroc": 0.6944
+   },
+   "101": {
+    "n": 4681,
+    "dasym": 0.2994,
+    "probe_all_auroc": 0.7012
+   },
+   "202": {
+    "n": 4681,
+    "dasym": 0.3066,
+    "probe_all_auroc": 0.701
+   },
+   "mean": 0.3065,
+   "sd": 0.007
+  },
+  "MultiPICo_de": {
+   "42": {
+    "n": 2370,
+    "dasym": 0.2184,
+    "probe_all_auroc": 0.6589
+   },
+   "101": {
+    "n": 2370,
+    "dasym": 0.2326,
+    "probe_all_auroc": 0.6497
+   },
+   "202": {
+    "n": 2370,
+    "dasym": 0.2627,
+    "probe_all_auroc": 0.6568
+   },
+   "mean": 0.2379,
+   "sd": 0.0226
+  },
+  "MultiPICo_fr": {
+   "42": {
+    "n": 1760,
+    "dasym": 0.3146,
+    "probe_all_auroc": 0.6905
+   },
+   "101": {
+    "n": 1760,
+    "dasym": 0.2694,
+    "probe_all_auroc": 0.6975
+   },
+   "202": {
+    "n": 1760,
+    "dasym": 0.2512,
+    "probe_all_auroc": 0.6802
+   },
+   "mean": 0.2784,
+   "sd": 0.0326
+  },
+  "MultiPICo_it": {
+   "42": {
+    "n": 998,
+    "dasym": 0.2174,
+    "probe_all_auroc": 0.6674
+   },
+   "101": {
+    "n": 998,
+    "dasym": 0.2541,
+    "probe_all_auroc": 0.6825
+   },
+   "202": {
+    "n": 998,
+    "dasym": 0.3176,
+    "probe_all_auroc": 0.6975
+   },
+   "mean": 0.263,
+   "sd": 0.0507
+  }
+ },
+ "native": {
+  "MultiPICo_es": {
+   "dasym": 0.2462,
+   "ci95": [
+    0.1922,
+    0.304
+   ],
+   "p_one_sided": 0.0,
+   "p_str": "<0.00025",
+   "mean_n_valid_0p5b": 9.933,
+   "mean_n_valid_32b": 10.0,
+   "yes_rate_0p5b": 0.6437,
+   "yes_rate_32b": 0.3647,
+   "balacc_all_32b": 0.701
+  },
+  "MultiPICo_de": {
+   "dasym": 0.2361,
+   "ci95": [
+    0.1944,
+    0.2773
+   ],
+   "p_one_sided": 0.0,
+   "p_str": "<0.00025",
+   "mean_n_valid_0p5b": 9.999,
+   "mean_n_valid_32b": 10.0,
+   "yes_rate_0p5b": 0.9949,
+   "yes_rate_32b": 0.4692,
+   "balacc_all_32b": 0.7381
+  },
+  "MultiPICo_fr": {
+   "dasym": 0.232,
+   "ci95": [
+    0.1748,
+    0.2881
+   ],
+   "p_one_sided": 0.0,
+   "p_str": "<0.00025",
+   "mean_n_valid_0p5b": 9.703,
+   "mean_n_valid_32b": 10.0,
+   "yes_rate_0p5b": 0.9955,
+   "yes_rate_32b": 0.4392,
+   "balacc_all_32b": 0.7098
+  },
+  "MultiPICo_it": {
+   "dasym": 0.2773,
+   "ci95": [
+    0.1837,
+    0.3647
+   ],
+   "p_one_sided": 0.0,
+   "p_str": "<0.00025",
+   "mean_n_valid_0p5b": 9.966,
+   "mean_n_valid_32b": 10.0,
+   "yes_rate_0p5b": 0.8487,
+   "yes_rate_32b": 0.3707,
+   "balacc_all_32b": 0.7581
+  }
+ },
+ "family": {
+  "CSC": {
+   "primary_1b_32b": {
+    "dasym": 0.1056,
+    "ci95": [
+     0.0727,
+     0.1377
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025"
+   },
+   "endpoint_7b_32b": {
+    "dasym": 0.1005,
+    "ci95": [
+     0.0713,
+     0.1292
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025"
+   },
+   "slope": {
+    "slope_diff": 0.0216,
+    "ci95": [
+     0.0156,
+     0.0274
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025",
+    "balacc_low": [
+     0.5094,
+     0.5062,
+     0.6355,
+     0.7393
+    ],
+    "balacc_high": [
+     0.5054,
+     0.4971,
+     0.5496,
+     0.6297
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.0509,
+    "o7b": 0.0094,
+    "o13b": 0.8063,
+    "o32b": 0.2399
+   },
+   "mean_n_valid": {
+    "o1b": 9.997,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.5097,
+    "o7b": 0.5019,
+    "o13b": 0.5882,
+    "o32b": 0.6879
+   },
+   "probe_all": {
+    "AUROC": 0.5637,
+    "ci95": [
+     0.5441,
+     0.5823
+    ],
+    "p_two_sided_vs_0.5": 0.0,
+    "n": 7036,
+    "n_pos": 1139
+   }
+  },
+  "EPIC": {
+   "primary_1b_32b": {
+    "dasym": 0.0741,
+    "ci95": [
+     0.0376,
+     0.1135
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025"
+   },
+   "endpoint_7b_32b": {
+    "dasym": 0.0601,
+    "ci95": [
+     0.0236,
+     0.0983
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025"
+   },
+   "slope": {
+    "slope_diff": 0.0122,
+    "ci95": [
+     0.005,
+     0.0198
+    ],
+    "p_one_sided": 0.00075,
+    "p_str": "0.0008",
+    "balacc_low": [
+     0.4875,
+     0.4972,
+     0.5,
+     0.5701
+    ],
+    "balacc_high": [
+     0.5029,
+     0.4986,
+     0.5065,
+     0.5114
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.0287,
+    "o7b": 0.004,
+    "o13b": 0.6589,
+    "o32b": 0.042
+   },
+   "mean_n_valid": {
+    "o1b": 9.997,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.4957,
+    "o7b": 0.4988,
+    "o13b": 0.5143,
+    "o32b": 0.5369
+   },
+   "probe_all": {
+    "AUROC": 0.6706,
+    "ci95": [
+     0.6126,
+     0.7229
+    ],
+    "p_two_sided_vs_0.5": 0.0,
+    "n": 2999,
+    "n_pos": 147
+   }
+  },
+  "MultiPICo_es": {
+   "primary_1b_32b": {
+    "dasym": 0.0231,
+    "ci95": [
+     0.0008,
+     0.0457
+    ],
+    "p_one_sided": 0.02275,
+    "p_str": "0.0227"
+   },
+   "endpoint_7b_32b": {
+    "dasym": 0.0281,
+    "ci95": [
+     0.0093,
+     0.0487
+    ],
+    "p_one_sided": 0.00125,
+    "p_str": "0.0013"
+   },
+   "slope": {
+    "slope_diff": 0.0041,
+    "ci95": [
+     -0.0007,
+     0.0089
+    ],
+    "p_one_sided": 0.0505,
+    "p_str": "0.0505",
+    "balacc_low": [
+     0.5022,
+     0.4996,
+     0.5296,
+     0.5364
+    ],
+    "balacc_high": [
+     0.4983,
+     0.5007,
+     0.5189,
+     0.5093
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.0107,
+    "o7b": 0.0015,
+    "o13b": 0.5947,
+    "o32b": 0.0286
+   },
+   "mean_n_valid": {
+    "o1b": 9.999,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.4984,
+    "o7b": 0.4999,
+    "o13b": 0.5224,
+    "o32b": 0.523
+   },
+   "probe_all": {
+    "AUROC": 0.6318,
+    "ci95": [
+     0.5798,
+     0.6921
+    ],
+    "p_two_sided_vs_0.5": 0.0,
+    "n": 4681,
+    "n_pos": 123
+   }
+  },
+  "MultiPICo_de": {
+   "primary_1b_32b": {
+    "dasym": 0.039,
+    "ci95": [
+     0.0068,
+     0.0731
+    ],
+    "p_one_sided": 0.01125,
+    "p_str": "0.0112"
+   },
+   "endpoint_7b_32b": {
+    "dasym": 0.0388,
+    "ci95": [
+     0.0091,
+     0.0702
+    ],
+    "p_one_sided": 0.0055,
+    "p_str": "0.0055"
+   },
+   "slope": {
+    "slope_diff": 0.0083,
+    "ci95": [
+     0.0018,
+     0.0154
+    ],
+    "p_one_sided": 0.0085,
+    "p_str": "0.0085",
+    "balacc_low": [
+     0.4973,
+     0.4994,
+     0.5253,
+     0.5571
+    ],
+    "balacc_high": [
+     0.4971,
+     0.4989,
+     0.4895,
+     0.5179
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.0156,
+    "o7b": 0.0013,
+    "o13b": 0.5139,
+    "o32b": 0.0439
+   },
+   "mean_n_valid": {
+    "o1b": 10.0,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.4986,
+    "o7b": 0.4991,
+    "o13b": 0.5171,
+    "o32b": 0.5364
+   },
+   "probe_all": {
+    "AUROC": 0.6269,
+    "ci95": [
+     0.5599,
+     0.6944
+    ],
+    "p_two_sided_vs_0.5": 0.0,
+    "n": 2370,
+    "n_pos": 96
+   }
+  },
+  "MultiPICo_fr": {
+   "primary_1b_32b": {
+    "dasym": 0.0826,
+    "ci95": [
+     0.0429,
+     0.126
+    ],
+    "p_one_sided": 0.0,
+    "p_str": "<0.00025"
+   },
+   "endpoint_7b_32b": {
+    "dasym": 0.0617,
+    "ci95": [
+     0.022,
+     0.1056
+    ],
+    "p_one_sided": 0.001,
+    "p_str": "0.0010"
+   },
+   "slope": {
+    "slope_diff": 0.0145,
+    "ci95": [
+     0.0067,
+     0.0226
+    ],
+    "p_one_sided": 0.0005,
+    "p_str": "0.0005",
+    "balacc_low": [
+     0.4922,
+     0.5051,
+     0.5055,
+     0.5695
+    ],
+    "balacc_high": [
+     0.5062,
+     0.4982,
+     0.4943,
+     0.5009
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.0097,
+    "o7b": 0.0011,
+    "o13b": 0.533,
+    "o32b": 0.0392
+   },
+   "mean_n_valid": {
+    "o1b": 9.999,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.5007,
+    "o7b": 0.5007,
+    "o13b": 0.508,
+    "o32b": 0.5357
+   },
+   "probe_all": {
+    "AUROC": 0.6338,
+    "ci95": [
+     0.5499,
+     0.7138
+    ],
+    "p_two_sided_vs_0.5": 0.004,
+    "n": 1760,
+    "n_pos": 55
+   }
+  },
+  "MultiPICo_it": {
+   "primary_1b_32b": {
+    "dasym": 0.0039,
+    "ci95": [
+     -0.0278,
+     0.0362
+    ],
+    "p_one_sided": 0.3995,
+    "p_str": "0.3995"
+   },
+   "endpoint_7b_32b": {
+    "dasym": -0.0018,
+    "ci95": [
+     -0.0307,
+     0.0272
+    ],
+    "p_one_sided": 0.53975,
+    "p_str": "0.5397"
+   },
+   "slope": {
+    "slope_diff": -0.0023,
+    "ci95": [
+     -0.0098,
+     0.0052
+    ],
+    "p_one_sided": 0.7215,
+    "p_str": "0.7215",
+    "balacc_low": [
+     0.4863,
+     0.5041,
+     0.4984,
+     0.5136
+    ],
+    "balacc_high": [
+     0.4852,
+     0.4973,
+     0.5449,
+     0.5086
+    ]
+   },
+   "yes_rate": {
+    "o1b": 0.02,
+    "o7b": 0.003,
+    "o13b": 0.5782,
+    "o32b": 0.016
+   },
+   "mean_n_valid": {
+    "o1b": 10.0,
+    "o7b": 10.0,
+    "o13b": 10.0,
+    "o32b": 10.0
+   },
+   "balacc_all": {
+    "o1b": 0.4911,
+    "o7b": 0.5004,
+    "o13b": 0.5096,
+    "o32b": 0.5139
+   },
+   "probe_all": {
+    "AUROC": 0.8024,
+    "ci95": [
+     0.6738,
+     0.9137
+    ],
+    "p_two_sided_vs_0.5": 0.0,
+    "n": 998,
+    "n_pos": 28
+   }
+  }
+ },
+ "auroc_variant": {
+  "CSC": {
+   "OLMo2": {
+    "dasym_auroc": 0.1435,
+    "ci95": [
+     0.0975,
+     0.1869
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.1298,
+    "ci95": [
+     0.0877,
+     0.1704
+    ]
+   }
+  },
+  "EPIC": {
+   "OLMo2": {
+    "dasym_auroc": 0.3444,
+    "ci95": [
+     0.2586,
+     0.4281
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.3662,
+    "ci95": [
+     0.2889,
+     0.4433
+    ]
+   }
+  },
+  "MultiPICo_es": {
+   "OLMo2": {
+    "dasym_auroc": 0.159,
+    "ci95": [
+     0.0941,
+     0.2262
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.3567,
+    "ci95": [
+     0.2963,
+     0.4158
+    ]
+   }
+  },
+  "MultiPICo_de": {
+   "OLMo2": {
+    "dasym_auroc": 0.1914,
+    "ci95": [
+     0.108,
+     0.276
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.2527,
+    "ci95": [
+     0.1731,
+     0.3308
+    ]
+   }
+  },
+  "MultiPICo_fr": {
+   "OLMo2": {
+    "dasym_auroc": 0.2506,
+    "ci95": [
+     0.1511,
+     0.3483
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.3642,
+    "ci95": [
+     0.2714,
+     0.4565
+    ]
+   }
+  },
+  "MultiPICo_it": {
+   "OLMo2": {
+    "dasym_auroc": 0.0536,
+    "ci95": [
+     -0.0711,
+     0.1774
+    ]
+   },
+   "Qwen25": {
+    "dasym_auroc": 0.2679,
+    "ci95": [
+     0.1535,
+     0.3796
+    ]
+   }
+  }
+ },
+ "macros": {
+  "SeedMeanCSC": "0.133",
+  "SeedSDCSC": "0.006",
+  "SeedDACSCSA": "0.136",
+  "SeedProbeCSCSA": "0.581",
+  "SeedDACSCSB": "0.137",
+  "SeedProbeCSCSB": "0.589",
+  "SeedDACSCSC": "0.127",
+  "SeedProbeCSCSC": "0.581",
+  "SeedMeanEPIC": "0.312",
+  "SeedSDEPIC": "0.002",
+  "SeedDAEPICSA": "0.313",
+  "SeedProbeEPICSA": "0.703",
+  "SeedDAEPICSB": "0.312",
+  "SeedProbeEPICSB": "0.716",
+  "SeedDAEPICSC": "0.309",
+  "SeedProbeEPICSC": "0.690",
+  "SeedMeanES": "0.306",
+  "SeedSDES": "0.007",
+  "SeedDAESSA": "0.313",
+  "SeedProbeESSA": "0.694",
+  "SeedDAESSB": "0.299",
+  "SeedProbeESSB": "0.701",
+  "SeedDAESSC": "0.307",
+  "SeedProbeESSC": "0.701",
+  "SeedMeanDE": "0.238",
+  "SeedSDDE": "0.023",
+  "SeedDADESA": "0.218",
+  "SeedProbeDESA": "0.659",
+  "SeedDADESB": "0.233",
+  "SeedProbeDESB": "0.650",
+  "SeedDADESC": "0.263",
+  "SeedProbeDESC": "0.657",
+  "SeedMeanFR": "0.278",
+  "SeedSDFR": "0.033",
+  "SeedDAFRSA": "0.315",
+  "SeedProbeFRSA": "0.691",
+  "SeedDAFRSB": "0.269",
+  "SeedProbeFRSB": "0.698",
+  "SeedDAFRSC": "0.251",
+  "SeedProbeFRSC": "0.680",
+  "SeedMeanIT": "0.263",
+  "SeedSDIT": "0.051",
+  "SeedDAITSA": "0.217",
+  "SeedProbeITSA": "0.667",
+  "SeedDAITSB": "0.254",
+  "SeedProbeITSB": "0.682",
+  "SeedDAITSC": "0.318",
+  "SeedProbeITSC": "0.698",
+  "SeedSDMax": "0.051",
+  "SeedMeanMin": "0.133",
+  "NatDAES": "0.246$^\\dagger$",
+  "NatDACIES": "[0.192, 0.304]",
+  "NatDADE": "0.236$^\\dagger$",
+  "NatDACIDE": "[0.194, 0.277]",
+  "NatDAFR": "0.232$^\\dagger$",
+  "NatDACIFR": "[0.175, 0.288]",
+  "NatDAIT": "0.277$^\\dagger$",
+  "NatDACIIT": "[0.184, 0.365]",
+  "FamDACSC": "0.106$^\\dagger$",
+  "FamDACICSC": "[0.073, 0.138]",
+  "FamSlopeCSC": "0.022$^\\dagger$",
+  "FamSlopeCICSC": "[0.016, 0.027]",
+  "FamEndCSC": "0.101",
+  "FamEndCICSC": "[0.071, 0.129]",
+  "FamProbeCSC": "0.564$^\\dagger$",
+  "FamBALowCSCA": "0.509",
+  "FamBAHighCSCA": "0.505",
+  "FamYesCSCA": "0.051",
+  "FamBALowCSCB": "0.506",
+  "FamBAHighCSCB": "0.497",
+  "FamYesCSCB": "0.009",
+  "FamBALowCSCC": "0.635",
+  "FamBAHighCSCC": "0.550",
+  "FamYesCSCC": "0.806",
+  "FamBALowCSCD": "0.739",
+  "FamBAHighCSCD": "0.630",
+  "FamYesCSCD": "0.240",
+  "FamDAEPIC": "0.074$^\\dagger$",
+  "FamDACIEPIC": "[0.038, 0.114]",
+  "FamSlopeEPIC": "0.012$^\\dagger$",
+  "FamSlopeCIEPIC": "[0.005, 0.020]",
+  "FamEndEPIC": "0.060",
+  "FamEndCIEPIC": "[0.024, 0.098]",
+  "FamProbeEPIC": "0.671$^\\dagger$",
+  "FamBALowEPICA": "0.487",
+  "FamBAHighEPICA": "0.503",
+  "FamYesEPICA": "0.029",
+  "FamBALowEPICB": "0.497",
+  "FamBAHighEPICB": "0.499",
+  "FamYesEPICB": "0.004",
+  "FamBALowEPICC": "0.500",
+  "FamBAHighEPICC": "0.506",
+  "FamYesEPICC": "0.659",
+  "FamBALowEPICD": "0.570",
+  "FamBAHighEPICD": "0.511",
+  "FamYesEPICD": "0.042",
+  "FamDAES": "0.023$^\\dagger$",
+  "FamDACIES": "[0.001, 0.046]",
+  "FamSlopeES": "0.004",
+  "FamSlopeCIES": "[-0.001, 0.009]",
+  "FamEndES": "0.028",
+  "FamEndCIES": "[0.009, 0.049]",
+  "FamProbeES": "0.632$^\\dagger$",
+  "FamBALowESA": "0.502",
+  "FamBAHighESA": "0.498",
+  "FamYesESA": "0.011",
+  "FamBALowESB": "0.500",
+  "FamBAHighESB": "0.501",
+  "FamYesESB": "0.002",
+  "FamBALowESC": "0.530",
+  "FamBAHighESC": "0.519",
+  "FamYesESC": "0.595",
+  "FamBALowESD": "0.536",
+  "FamBAHighESD": "0.509",
+  "FamYesESD": "0.029",
+  "FamDADE": "0.039$^\\dagger$",
+  "FamDACIDE": "[0.007, 0.073]",
+  "FamSlopeDE": "0.008$^\\dagger$",
+  "FamSlopeCIDE": "[0.002, 0.015]",
+  "FamEndDE": "0.039",
+  "FamEndCIDE": "[0.009, 0.070]",
+  "FamProbeDE": "0.627$^\\dagger$",
+  "FamBALowDEA": "0.497",
+  "FamBAHighDEA": "0.497",
+  "FamYesDEA": "0.016",
+  "FamBALowDEB": "0.499",
+  "FamBAHighDEB": "0.499",
+  "FamYesDEB": "0.001",
+  "FamBALowDEC": "0.525",
+  "FamBAHighDEC": "0.489",
+  "FamYesDEC": "0.514",
+  "FamBALowDED": "0.557",
+  "FamBAHighDED": "0.518",
+  "FamYesDED": "0.044",
+  "FamDAFR": "0.083$^\\dagger$",
+  "FamDACIFR": "[0.043, 0.126]",
+  "FamSlopeFR": "0.015$^\\dagger$",
+  "FamSlopeCIFR": "[0.007, 0.023]",
+  "FamEndFR": "0.062",
+  "FamEndCIFR": "[0.022, 0.106]",
+  "FamProbeFR": "0.634$^\\dagger$",
+  "FamBALowFRA": "0.492",
+  "FamBAHighFRA": "0.506",
+  "FamYesFRA": "0.010",
+  "FamBALowFRB": "0.505",
+  "FamBAHighFRB": "0.498",
+  "FamYesFRB": "0.001",
+  "FamBALowFRC": "0.505",
+  "FamBAHighFRC": "0.494",
+  "FamYesFRC": "0.533",
+  "FamBALowFRD": "0.570",
+  "FamBAHighFRD": "0.501",
+  "FamYesFRD": "0.039",
+  "FamDAIT": "0.004",
+  "FamDACIIT": "[-0.028, 0.036]",
+  "FamSlopeIT": "-0.002",
+  "FamSlopeCIIT": "[-0.010, 0.005]",
+  "FamEndIT": "-0.002",
+  "FamEndCIIT": "[-0.031, 0.027]",
+  "FamProbeIT": "0.802$^\\dagger$",
+  "FamBALowITA": "0.486",
+  "FamBAHighITA": "0.485",
+  "FamYesITA": "0.020",
+  "FamBALowITB": "0.504",
+  "FamBAHighITB": "0.497",
+  "FamYesITB": "0.003",
+  "FamBALowITC": "0.498",
+  "FamBAHighITC": "0.545",
+  "FamYesITC": "0.578",
+  "FamBALowITD": "0.514",
+  "FamBAHighITD": "0.509",
+  "FamYesITD": "0.016",
+  "FamAucDACSC": "0.143$^\\dagger$",
+  "FamAucDACICSC": "[0.098, 0.187]",
+  "QwenAucDACSC": "0.130$^\\dagger$",
+  "QwenAucDACICSC": "[0.088, 0.170]",
+  "FamAucDAEPIC": "0.344$^\\dagger$",
+  "FamAucDACIEPIC": "[0.259, 0.428]",
+  "QwenAucDAEPIC": "0.366$^\\dagger$",
+  "QwenAucDACIEPIC": "[0.289, 0.443]",
+  "FamAucDAES": "0.159$^\\dagger$",
+  "FamAucDACIES": "[0.094, 0.226]",
+  "QwenAucDAES": "0.357$^\\dagger$",
+  "QwenAucDACIES": "[0.296, 0.416]",
+  "FamAucDADE": "0.191$^\\dagger$",
+  "FamAucDACIDE": "[0.108, 0.276]",
+  "QwenAucDADE": "0.253$^\\dagger$",
+  "QwenAucDACIDE": "[0.173, 0.331]",
+  "FamAucDAFR": "0.251$^\\dagger$",
+  "FamAucDACIFR": "[0.151, 0.348]",
+  "QwenAucDAFR": "0.364$^\\dagger$",
+  "QwenAucDACIFR": "[0.271, 0.457]",
+  "FamAucDAIT": "0.054",
+  "FamAucDACIIT": "[-0.071, 0.177]",
+  "QwenAucDAIT": "0.268$^\\dagger$",
+  "QwenAucDACIIT": "[0.153, 0.380]",
+  "FamAucNsig": "5",
+  "FamAucSigMin": "0.143",
+  "FamAucSigMax": "0.344",
+  "SeedProbeMin": "0.581",
+  "SeedProbeMax": "0.716",
+  "NatDAMin": "0.232",
+  "NatDAMax": "0.277",
+  "NatCILoMin": "0.175",
+  "NatYesSmallMax": "0.996",
+  "NatValidMin": "9.70",
+  "FamYesBinMax": "0.044",
+  "FamYesThirteenMin": "0.514",
+  "FamYesThirteenMax": "0.659",
+  "FamBALowLargeBinMin": "0.514",
+  "FamBALowLargeBinMax": "0.570",
+  "FamProbeMin": "0.564",
+  "FamProbeMax": "0.802",
+  "FamYesLargeCSC": "0.240",
+  "FamNsigDA": "5",
+  "FamNsigSlope": "4"
+ }
+}
