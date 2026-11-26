@@ -138,13 +138,14 @@ python python/revision_r1/make_figures_r1.py   # -> results/revision_r1_2026-11/
 ```
 
 Both commands read only shipped files (`results/revision_r1_2026-11/R1_CPU.json`,
-`R1_GPU.json`, and earlier result JSONs) and run on a CPU in seconds.
+`R1_GPU.json`, `R1_ENT.json`, and earlier result JSONs) and run on a CPU in seconds.
 
 | Step | Script | Output (shipped) |
 |---|---|---|
 | CPU analyses: alternative strata, stratum-definition CIs, reweighting, full-range slopes, label-noise null, escalation predictors, Holm family | `python/revision_r1/analyze_r1_cpu.py` | `results/revision_r1_2026-11/R1_CPU.json` |
 | GPU runs: Qwen2.5 inference seeds (`--mode seed`), OLMo-2 Instruct 1B/7B/13B/32B (`--mode family`), item-language prompts on MultiPICo es/de/fr/it (`--mode native`) | `kbs/gpu_sweep/run_r1_gpu.py` (run next to `run_gpu_sweep_regen_v3.py`) | per-item CSVs (not shipped) |
 | Analysis of the GPU runs, including the threshold-free within-stratum AUROC variant of ΔAsym | `python/revision_r1/analyze_r1_gpu.py` | `results/revision_r1_2026-11/R1_GPU.json` |
+| Alignment of sampled label entropy with annotator disagreement (Table C.10) | `python/revision_r1/analyze_r1_entropy.py` | `results/revision_r1_2026-11/R1_ENT.json` |
 
 `analyze_r1_cpu.py` and `analyze_r1_gpu.py` need the per-item prediction files and the
 corpora; the bootstrap uses B = 4,000 and seed 42.

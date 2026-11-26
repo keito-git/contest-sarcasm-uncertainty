@@ -74,12 +74,13 @@ def main() -> None:
         run = max(run, min(1.0, raw[i] * (n - r)))
         adj[i] = run
     for c, a in zip(C, adj):
-        mac(f"PrimPHolm{TAG[c]}", pstr(a, B) if a > 0 else f"$<$1/{B + 1}")
+        # Holm-adjusted bound: a raw p below 1/(B+1) gives an adjusted p below n/(B+1)
+        mac(f"PrimPHolm{TAG[c]}", pstr(a, B) if a > 0 else f"$<${n}/{B + 1}")
     c2b = json.load(open(PROJ / "results/revision_gpu_2026-09/round1_analysis/C2b_v5.json"))
     for c in C:
         pc = c2b["per_corpus"][c]
         ph = float(pc["p_holm"])
-        mac(f"NullPHolm{TAG[c]}", "$<$1/1001" if ph == 0 else f"{ph:.3f}")
+        mac(f"NullPHolm{TAG[c]}", f"$<${len(C)}/{int(c2b['n_sims']) + 1}" if ph == 0 else f"{ph:.3f}")
         mac(f"NullMean{TAG[c]}", f3(float(pc["null_mean"])))
         mac(f"NullExpl{TAG[c]}", pct(float(pc["null_explained_frac"])))
         mac(f"NullExcess{TAG[c]}", f3(float(pc["noise_corrected_excess"])))
@@ -155,6 +156,14 @@ def main() -> None:
     mac("SubFracGeCSC", pct(d["S7_sub400"]["CSC"]["frac_sub400_ge_0.242"]))
     mac("SubSDmin", f3(min(d["S7_sub400"][c]["sub400_sd"] for c in C)))
     mac("SubSDmax", f3(max(d["S7_sub400"][c]["sub400_sd"] for c in C)))
+
+    # ---------------- grouping loss read in the reverse direction ----------------
+    rev = {c: 1 - d["S8_escalation"][c]["on_small_wrong"]["supervised_grouping_loss_natural"]["AUROC"] for c in C}
+    prb = {c: d["S8_escalation"][c]["on_small_wrong"]["contraction_probe"]["AUROC"] for c in C}
+    mac("EscGLRevMin", f3(min(rev.values())))
+    mac("EscGLRevMax", f3(max(rev.values())))
+    nwin = sum(rev[c] > prb[c] for c in C)
+    mac("EscGLRevBeatsProbeN", ["no", "one", "two", "three", "four", "five", "all six"][nwin])
 
     # ---------------- S8 escalation ----------------
     names = {"contraction_probe": "Probe", "entropy_0p5b": "Ent", "one_minus_dis": "Hum",
@@ -269,6 +278,25 @@ def main() -> None:
     mac("DeltaErrPartialMaxCSC", f3(max(abs(r["partial_delta_error_ctrl_humandis"]) for r in csc)))
     mac("DeltaDisRhoCSC", f3(csc[0]["rho_delta_humandis"]["rho"]))
     mac("DeltaUvRhoMaxCSC", f3(max(r["rho_delta_Uverbal"]["rho"] for r in csc)))
+
+    # ---------------- sampled label entropy vs dis (analyze_r1_entropy.py) ----------------
+    e = RES / "R1_ENT.json"
+    if e.exists():
+        ed = json.load(open(e))
+        for c in C:
+            t = TAG[c]
+            for tag, sz in (("q0p5b", "Small"), ("q32b", "Large")):
+                r = ed[c][tag]
+                mac(f"EntRho{sz}{t}", f3(r["rho"]))
+                mac(f"EntRhoCI{sz}{t}", ci(r["rho_ci95"]))
+                mac(f"EntAuc{sz}{t}", f3(r["auroc_top"]))
+                mac(f"EntAucCI{sz}{t}", ci(r["auroc_ci95"]))
+        allr = [ed[c][g]["rho"] for c in C for g in ("q0p5b", "q32b")]
+        alla = [ed[c][g]["auroc_top"] for c in C for g in ("q0p5b", "q32b")]
+        mac("EntRhoMin", f3(min(allr)))
+        mac("EntRhoMax", f3(max(allr)))
+        mac("EntAucMin", f3(min(alla)))
+        mac("EntAucMax", f3(max(alla)))
 
     # ---------------- GPU results (filled only when R1_GPU.json exists) ----------------
     g = RES / "R1_GPU.json"
