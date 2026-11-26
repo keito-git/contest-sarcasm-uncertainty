@@ -245,6 +245,9 @@ def main() -> None:
         if model == "GPT-4.1":
             mac(f"FNlow{t}", v["n_low"])
             mac(f"FNposLow{t}", v["n_pos_low"])
+        mac(f"FNlow{m}{t}", v["n_low"])
+        mac(f"FNposLow{m}{t}", v["n_pos_low"])
+        mac(f"FNdrop{m}{t}", 400 - v["n"])
         if "rho_Ulp_dis" in v:
             mac(f"FRhoLp{m}{t}", f3(v["rho_Ulp_dis"]))
             mac(f"FAucLp{m}{t}", f3(v["auroc_Ulp_high_dis"]))
